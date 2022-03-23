@@ -47,9 +47,9 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb> {
       height: size.height,
       width: size.width,
       decoration: BoxDecoration(
-          //image: DecorationImage(
-          //image: AssetImage("assets/images/SX.gif"), fit: BoxFit.cover),
-          ),
+        image: DecorationImage(
+            image: AssetImage("assets/images/SX.gif"), fit: BoxFit.cover),
+      ),
       child: Center(
         child: Stack(children: [
           Column(
