@@ -1,0 +1,113 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class HomeContactUsWeb extends StatelessWidget {
+  const HomeContactUsWeb({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return Container(
+      height: size.height,
+      width: size.width,
+      // child: Image.asset(
+      //   "assets/images/home_contact.png",
+      //   height: size.height,
+      //   width: size.width,
+      //   filterQuality: FilterQuality.high,
+      //   fit: BoxFit.fill,
+      // ),
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+            image: AssetImage(
+              "assets/images/home_contact.png",
+            ),
+            filterQuality: FilterQuality.high,
+            fit: BoxFit.cover),
+      ),
+      child: Stack(
+        children: [
+          Positioned(
+            left: 80,
+            child: Container(
+              child: Image.asset('assets/images/A3.png',
+                  height: 874, filterQuality: FilterQuality.high),
+              alignment: Alignment.center,
+            ),
+          ),
+          Positioned(
+            left: 200,
+            top: 60,
+            child: Container(
+              child: Image.asset('assets/images/Cube3.png',
+                  height: 258.32, filterQuality: FilterQuality.high),
+              alignment: Alignment.center,
+            ),
+          ),
+          Positioned(
+            left: 80,
+            child: Container(
+              child: Image.asset('assets/images/Cube4.png',
+                  height: 800, filterQuality: FilterQuality.high),
+              alignment: Alignment.center,
+            ),
+          ),
+          // Positioned(
+          //   left: 800.0,
+          //   bottom: 420,
+          //   child: Text("Contact Us",
+          //       textAlign: TextAlign.left,
+          //       overflow: TextOverflow.ellipsis,
+          //       //style: TextStyle(fontWeight: FontWeight.bold),
+          //       style: GoogleFonts.nunito(
+          //         fontSize: 28.0,
+          //         fontWeight: FontWeight.w700, //w700
+          //       )),
+          // ),
+          Positioned(
+            left: 800.0,
+            bottom: 200,
+            child: Column(
+              children: [
+                Text("Contact Us",
+                    textAlign: TextAlign.left,
+                    overflow: TextOverflow.ellipsis,
+                    //style: TextStyle(fontWeight: FontWeight.bold),
+                    style: GoogleFonts.nunito(
+                      fontSize: 28.0,
+                      fontWeight: FontWeight.w700, //w700
+                    )),
+                SizedBox(
+                  height: 20.0,
+                ),
+                Text(
+                    "We’re ready to talk about your organization\n and your goals—and how we can partner\n you in this journey.\nJust fill out the form, and we’ll get back to you. \nIf you’d rather talk to a human right away,\n feel free to give us a call.",
+                    textAlign: TextAlign.left,
+                    overflow: TextOverflow.ellipsis,
+                    //style: TextStyle(fontWeight: FontWeight.bold),
+                    style: GoogleFonts.nunito(
+                      fontSize: 25.0,
+                      fontWeight: FontWeight.w400, //w700
+                    )),
+                SizedBox(
+                  height: 30.0,
+                ),
+                TextButton(
+                  child: Text(
+                    "Start",
+                    style: TextStyle(fontSize: 25),
+                  ),
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                      primary: Colors.black,
+                      elevation: 2,
+                      backgroundColor: Colors.white),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
