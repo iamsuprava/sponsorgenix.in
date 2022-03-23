@@ -1,7 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:sponsorgenix/constants.dart';
 //import 'package:sponsorgenix/web/sections/Feedbacks/feedbacks_web.dart';
 import 'package:sponsorgenix/web/sections/Home/discover_us_web.dart';
@@ -31,10 +30,10 @@ class _WebLandingPageState extends State<WebLandingPage> {
   final _homeDiscoverUsKey = GlobalKey();
   final _homeServicesKey = GlobalKey();
   final _homeContactUsKey = GlobalKey();
-  late ScrollController _controller;
+
   late bool condition;
   double height = 1500;
-  //_scrollController = ScrollController();
+  final _scrollController = ScrollController();
   double pixels = 0.0;
 
   Future goToHeader() async {
@@ -75,24 +74,24 @@ class _WebLandingPageState extends State<WebLandingPage> {
   //   _scrollController.dispose();
   //   super.dispose();
   // }
-  @override
-  void initState() {
-    super.initState();
+  // @override
+  // void initState() {
+  //   super.initState();
 
-    _controller = ScrollController();
-    _controller.addListener(() {
-      setState(() {
-        pixels = _controller.position.pixels;
-        //print(_controller.position.pixels);
-      });
-    });
-  }
+  //   _controller = ScrollController();
+  //   _controller.addListener(() {
+  //     setState(() {
+  //       pixels = _controller.position.pixels;
+  //       //print(_controller.position.pixels);
+  //     });
+  //   });
+  // }
 
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   _controller.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -136,7 +135,7 @@ class _WebLandingPageState extends State<WebLandingPage> {
                   ),
                 ),
                 SizedBox(
-                  width: size.width * 0.2,
+                  width: size.width * 0.34,
                 ),
                 Expanded(
                   child: Row(
@@ -148,16 +147,13 @@ class _WebLandingPageState extends State<WebLandingPage> {
                                   condition = true;
                                   height = MediaQuery.of(context).size.height;
                                 });
-
-                                Future.delayed(Duration(milliseconds: 1000),
-                                    () {
+                                Future.delayed(Duration(milliseconds: 800), () {
                                   Navigator.pushNamed(context, '/$e');
                                 });
                               },
                             ))
                         .toList(),
                   ),
-
                   // child: Row(
                   //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   //   children: [
@@ -176,10 +172,9 @@ class _WebLandingPageState extends State<WebLandingPage> {
       ),
       extendBodyBehindAppBar: true,
       body: Stack(
-        //Stack
         children: [
           SingleChildScrollView(
-            controller: _controller, //_scrollController,
+            controller: _scrollController, //_scrollController,
             child: Column(
               children: [
                 HeaderSectionWeb(
@@ -746,33 +741,6 @@ class _WebLandingPageState extends State<WebLandingPage> {
           Icons.whatsapp_rounded,
           size: 40,
           color: Colors.white,
-        ),
-      ),
-    );
-  }
-}
-
-class NavButton extends StatefulWidget {
-  final String text;
-  final Function function;
-  NavButton({required this.function, required this.text});
-  @override
-  _NavButtonState createState() => _NavButtonState();
-}
-
-class _NavButtonState extends State<NavButton> {
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        widget.function();
-      },
-      child: Padding(
-        padding: const EdgeInsets.only(right: 25.0),
-        child: Text(
-          widget.text,
-          style: GoogleFonts.poppins(
-              fontSize: 15.0, fontWeight: FontWeight.w300, color: Colors.white),
         ),
       ),
     );

@@ -258,18 +258,24 @@ class _AboutState extends State<About> {
                                         ? Row(
                                             children: [
                                               SocialButtons(
+                                                  url:
+                                                      "https://www.instagram.com/sponsorgenix",
                                                   child: Image.asset(
                                                       "assets/images/Instagram_3d.png")),
                                               SizedBox(
                                                 height: 10,
                                               ),
                                               SocialButtons(
+                                                  url:
+                                                      "https://www.instagram.com/sponsorgenix",
                                                   child: Image.asset(
                                                       "assets/images/Twitter_3d.png")),
                                               SizedBox(
                                                 height: 10,
                                               ),
                                               SocialButtons(
+                                                  url:
+                                                      "https://www.instagram.com/sponsorgenix",
                                                   child: Image.asset(
                                                       "assets/images/LinkedIn_3d.png")),
                                               SizedBox(

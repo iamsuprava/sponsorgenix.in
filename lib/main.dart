@@ -1,4 +1,3 @@
-// @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:sponsorgenix/Routes.dart';
 import 'mobile/mobile_landing_page.dart';
@@ -9,7 +8,7 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
-  //const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   _MyAppState createState() => _MyAppState();
@@ -32,37 +31,35 @@ class _MyAppState extends State<MyApp> {
           fontFamily: "Gilroy",
           visualDensity: VisualDensity.adaptivePlatformDensity),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+      // initialRoute: '/',
       onGenerateRoute: Flurorouter.router.generator,
       //this RootWidget is the root of our application
-      //home: RootWidget(),
+      home: RootWidget(),
     );
   }
 }
 
-// class RootWidget extends StatelessWidget {
-//   const RootWidget({Key? key}) : super(key: key);
+class RootWidget extends StatelessWidget {
+  const RootWidget({Key? key}) : super(key: key);
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return LayoutBuilder(
-//       builder: ((context, constraints) {
-//         if (constraints.maxWidth > 930) {
-//           return desktopView();
-//         } else {
-//           return mobileView();
-//         }
-//       }),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: ((context, constraints) {
+        if (constraints.maxWidth > 930) {
+          return desktopView();
+        } else {
+          return mobileView();
+        }
+      }),
+    );
+  }
+}
 
-// Widget mobileView() {
-//   return MobileLandingPage();
-// }
+Widget mobileView() {
+  return MobileLandingPage();
+}
 
-// Widget desktopView() {
-//   initialRoute: '/',
-//       onGenerateRoute: Flurorouter.router.generator,
-//   return WebLandingPage();
-// }
+Widget desktopView() {
+  return WebLandingPage();
+}

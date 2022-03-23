@@ -8,21 +8,21 @@ import 'package:sponsorgenix/web/web_landing_page.dart';
 class Flurorouter {
   static final FluroRouter router = FluroRouter();
 
-  static Handler _homeHandler = Handler(
+  static Handler homeHandler = Handler(
       handlerFunc: (BuildContext? context, Map<String, dynamic> params) =>
           WebLandingPage());
 
-  static Handler _aboutHandler = Handler(
+  static Handler aboutHandler = Handler(
       handlerFunc: (BuildContext? context, Map<String, dynamic> params) =>
           //handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           About());
 
-  static Handler _blogHandler = Handler(
+  static Handler blogHandler = Handler(
       handlerFunc: (BuildContext? context, Map<String, dynamic> params) =>
           //handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           Blog());
 
-  static Handler _contactHandler = Handler(
+  static Handler contactHandler = Handler(
       handlerFunc: (BuildContext? context, Map<String, dynamic> params) =>
           //handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
           Contact());
@@ -30,22 +30,22 @@ class Flurorouter {
   static void setupRouter() {
     router.define(
       '/',
-      handler: _homeHandler,
+      handler: homeHandler,
     );
     router.define(
       '/About',
-      handler: _aboutHandler,
+      handler: aboutHandler,
       // transitionType: TransitionType.fadeIn,
     );
     router.define(
       '/Blog',
-      handler: _blogHandler,
+      handler: blogHandler,
       // transitionType: TransitionType.fadeIn,
     );
 
     router.define(
       '/Contact',
-      handler: _contactHandler,
+      handler: contactHandler,
       // transitionType: TransitionType.fadeIn,
     );
   }
