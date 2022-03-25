@@ -24,16 +24,14 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Sponsorgenix',
       themeMode: ThemeMode.dark,
       darkTheme: ThemeData.dark(),
       theme: ThemeData(
           fontFamily: "Gilroy",
           visualDensity: VisualDensity.adaptivePlatformDensity),
-      debugShowCheckedModeBanner: false,
-      // initialRoute: '/',
       onGenerateRoute: Flurorouter.router.generator,
-      //this RootWidget is the root of our application
       home: RootWidget(),
     );
   }

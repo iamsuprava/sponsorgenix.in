@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bootstrap/flutter_bootstrap.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:smooth_scroll_web/smooth_scroll_web.dart';
+// import 'package:smooth_scroll_web/smooth_scroll_web.dart';
 
 class Blog extends StatefulWidget {
   @override
@@ -34,9 +34,8 @@ class _BlogState extends State<Blog> {
       body: Container(
         child: Stack(
           children: [
-            SmoothScrollWeb(
-              controller: controller,
-              child: SingleChildScrollView(
+            
+               SingleChildScrollView(
                 physics: NeverScrollableScrollPhysics(),
                 controller: controller,
                 child: Center(
@@ -274,7 +273,7 @@ class _BlogState extends State<Blog> {
                   ),
                 ),
               ),
-            ),
+            
             Container(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smooth_scroll_web/smooth_scroll_web.dart';
+// import 'package:smooth_scroll_web/smooth_scroll_web.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Contact extends StatefulWidget {
@@ -33,9 +33,8 @@ class _ContactState extends State<Contact> {
       body: Container(
         child: Stack(
           children: [
-            SmoothScrollWeb(
-              controller: controller,
-              child: SingleChildScrollView(
+            
+               SingleChildScrollView(
                 physics: NeverScrollableScrollPhysics(),
                 controller: controller,
                 child: Center(
@@ -113,7 +112,7 @@ class _ContactState extends State<Contact> {
                   ),
                 ),
               ),
-            ),
+            
             Container(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,

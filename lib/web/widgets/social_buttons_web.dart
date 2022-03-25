@@ -28,6 +28,7 @@ class _SocialButtonsState extends State<SocialButtons> {
           duration: const Duration(milliseconds: 200),
           transform: transformed,
           child: IconButton(
+            padding: EdgeInsets.all(0),
             onPressed: () async {
               if (await canLaunch(widget.url)) {
                 await launch(widget.url);
@@ -35,6 +36,7 @@ class _SocialButtonsState extends State<SocialButtons> {
                 print("Currently unavailable");
             },
             icon: widget.child,
+            iconSize: 25,
           ),
         ));
   }

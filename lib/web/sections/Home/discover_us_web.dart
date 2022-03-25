@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sponsorgenix/web/widgets/animated_lottie_explore_button.dart';
+import 'package:sponsorgenix/web/widgets/floating_cubes.dart';
 
 import '../../src/About.dart';
 
@@ -24,7 +25,7 @@ class HomeDiscoverUsWeb extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
-            left: size.width * 0.12,
+            left: size.width * 0.15,
             bottom: 0,
             child: Container(
               child: Image.asset('assets/images/A1.png',
@@ -33,21 +34,15 @@ class HomeDiscoverUsWeb extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: size.width * 0.03,
-            top: size.width * 0.1,
-            child: Container(
-              child: Image.asset('assets/images/Cube1.png',
-                  height: size.height * 0.2, filterQuality: FilterQuality.high),
-              alignment: Alignment.center,
-            ),
-          ),
+              left: 0,
+              top: size.height * 0.3,
+              child: const FloatingCubes(
+                  assetLink: "assets/images/Floating_Cube_01.riv")),
           Positioned(
-            right: size.width * 0.45,
-            bottom: 40,
-            child: Container(
-              child: Image.asset('assets/images/Cube2.png',
-                  height: 258.32, filterQuality: FilterQuality.high),
-              alignment: Alignment.center,
+            right: size.width * 0.42,
+            bottom: size.height * 0.14,
+            child: const FloatingCubes(
+              assetLink: "assets/images/Floating_cube_02.riv",
             ),
           ),
           Positioned(
