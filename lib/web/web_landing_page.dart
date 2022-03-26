@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -6,6 +8,7 @@ import 'package:sponsorgenix/constants.dart';
 import 'package:sponsorgenix/web/sections/Home/discover_us_web.dart';
 import 'package:sponsorgenix/web/sections/Home/home_contact_web.dart';
 import 'package:sponsorgenix/web/sections/Home/home_services_web.dart';
+import 'package:url_launcher/url_launcher.dart';
 //import 'package:sponsorgenix/web/sections/Recent%20Works/recent_works_web.dart';
 //import 'package:sponsorgenix/web/sections/Services/services_screen_web.dart';
 //import 'sections/About Us/about_us_web.dart';
@@ -18,6 +21,7 @@ import 'widgets/web_navigation_tabs.dart';
 
 class WebLandingPage extends StatefulWidget {
   //const WebLandingPage({Key? key}) : super(key: key);
+  late String url;
 
   @override
   State<WebLandingPage> createState() => _WebLandingPageState();
@@ -708,7 +712,9 @@ class _WebLandingPageState extends State<WebLandingPage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.miniStartFloat,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          openDialog();
+        },
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
@@ -721,4 +727,61 @@ class _WebLandingPageState extends State<WebLandingPage> {
       ),
     );
   }
+
+  Future openDialog() => showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text("Your Name"),
+          content: TextField(
+            decoration: InputDecoration(hintText: "Enter your Name"),
+          ),
+          actions: [
+            TextButton(
+                child: Text("SENT"),
+                onPressed: () async {
+                  final url =
+                      "https://api.whatsapp.com/send/?phone=918392068384&text&app_absent=0";
+                  if (await canLaunch(url)) {
+                    await launch(url);
+                  }
+                })
+          ],
+        ),
+      );
+  // reachUs() async {
+  //   var contact = "+918392068384";
+  //   var android_url = "whatsapp://send?phone=" + contact + "&text= Hi";
+  //   var IOS_url = "https://wa.me/$contact?text=${Uri.parse("Hi")}";
+  //   if (Platform.isIOS) {
+  //     if (await canLaunch(IOS_url)) {
+  //       await launch(IOS_url, forceSafariVC: false);
+  //     } else {
+  //       print("Whatsapp is not installed");
+  //     }
+  //   }
+  // }
+  // openwhatsapp() async {
+  //   var whatsapp = "+91 8392068384";
+  //   var whatsappURL_android =
+  //       "https://api.whatsapp.com/send/?phone=918392068384&text&app_absent=0"; //whatsapp://send?phone=" + whatsapp + "&text= Hi
+  //   var whatsappURL_ios = "https://wa.me/$whatsapp?text+${Uri.parse("hello")}";
+  //   if (Platform.isIOS) {
+  //     //for ios phone only
+  //     if (await canLaunch(whatsappURL_ios)) {
+  //       await launch(whatsappURL_ios, forceSafariVC: false);
+  //     } else {
+  //       ScaffoldMessenger.of(context)
+  //           .showSnackBar(SnackBar(content: new Text("whatsapp no installed")));
+  //     }
+  //   } else {
+  //     //android,web
+  //     if (await canLaunch(whatsappURL_android)) {
+  //       await launch(whatsappURL_android);
+  //     } else {
+  //       ScaffoldMessenger.of(context)
+  //           .showSnackBar(SnackBar(content: new Text("whatsapp no installed")));
+  //     }
+  //   }
+  // }
 }
+//https://api.whatsapp.com/send/?phone=918392068384&text&app_absent=0
