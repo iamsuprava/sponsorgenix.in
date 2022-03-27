@@ -31,12 +31,12 @@ class _ContactState extends State<Contact> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff101010),
+      backgroundColor: Color.fromARGB(255, 0, 0, 0),
       body: Container(
         child: Stack(
           children: [
             SingleChildScrollView(
-              physics: NeverScrollableScrollPhysics(),
+              //physics: NeverScrollableScrollPhysics(),
               controller: controller,
               child: Center(
                 child: Column(
@@ -413,7 +413,7 @@ class _ContactCardState extends State<ContactCard> {
           Icon(
             widget.icon,
             size: 35,
-            color: Color(0xff009e66),
+            color: Color.fromARGB(255, 2, 255, 234),
           ),
           SizedBox(
             width: 20.0,

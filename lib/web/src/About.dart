@@ -36,7 +36,7 @@ class _AboutState extends State<About> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color(0xff101010),
+      backgroundColor: Color.fromARGB(255, 0, 0, 0), //Color(0xff101010)
       body: SingleChildScrollView(
         child: Container(
           height: size.height,
@@ -144,7 +144,7 @@ class _AboutState extends State<About> {
                                   "What is Sponsorgenix?",
                                   style: GoogleFonts.poppins(
                                       fontSize: 25.0,
-                                      color: Color(0xff009e66),
+                                      color: Color.fromARGB(255, 2, 255, 234),
                                       fontWeight: FontWeight.w500),
                                 ),
                                 SizedBox(
@@ -250,7 +250,7 @@ class _AboutState extends State<About> {
                                       decoration: BoxDecoration(
                                         borderRadius:
                                             BorderRadius.circular(50.0),
-                                        color: Color(0xff009e66),
+                                        color: Color.fromARGB(255, 2, 255, 234),
                                       ),
                                       child: Center(
                                         child: Text(
@@ -417,7 +417,7 @@ class _AboutState extends State<About> {
                               height: 40,
                             ),
                             Text(
-                              "     Get started with my services",
+                              "     Get started with our services",
                               style: GoogleFonts.poppins(
                                   fontSize: 15.0,
                                   color: Colors.white70,
@@ -593,7 +593,8 @@ class _PlanCardState extends State<PlanCard> {
             width: 200,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50.0),
-              color: Color(0xff009e66),
+              color:
+                  Color.fromARGB(255, 2, 255, 234), //fromARGB(255, 2, 255, 234)
             ),
             child: Center(
               child: Text(
@@ -699,7 +700,9 @@ class _ServiceCardState extends State<ServiceCard> {
                   duration: Duration(milliseconds: 170),
                   curve: Curves.easeInOut,
                   height: 2.0,
-                  color: !hover ? Color(0xff161616) : Color(0xff009e66),
+                  color: !hover
+                      ? Color(0xff161616)
+                      : Color.fromARGB(255, 2, 255, 234),
                 ),
               ],
             ),
@@ -737,7 +740,7 @@ class _CvcardState extends State<Cvcard> {
             maxLines: 1,
             style: GoogleFonts.poppins(
                 fontSize: 16.0,
-                color: Color(0xff009e66),
+                color: Color.fromARGB(255, 2, 255, 234),
                 fontWeight: FontWeight.w400),
           ),
         ],
