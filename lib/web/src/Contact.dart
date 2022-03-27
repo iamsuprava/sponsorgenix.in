@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 // import 'package:smooth_scroll_web/smooth_scroll_web.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:sponsorgenix/web/widgets/hire_us_button.dart';
 
 class Contact extends StatefulWidget {
   @override
@@ -33,86 +35,83 @@ class _ContactState extends State<Contact> {
       body: Container(
         child: Stack(
           children: [
-            
-               SingleChildScrollView(
-                physics: NeverScrollableScrollPhysics(),
-                controller: controller,
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Padding(
-                          padding:
-                              const EdgeInsets.only(top: 25.0, right: 25.0),
-                          child: GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                height = MediaQuery.of(context).size.height;
-                              });
-                              Future.delayed(Duration(milliseconds: 1000), () {
-                                Navigator.pop(context);
-                              });
-                            },
-                            child: Container(
-                                child: Icon(
-                              Icons.clear_rounded,
-                              color: Colors.white,
-                              size: 35.0,
-                            )),
-                          ),
+            SingleChildScrollView(
+              physics: NeverScrollableScrollPhysics(),
+              controller: controller,
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 25.0, right: 25.0),
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              height = MediaQuery.of(context).size.height;
+                            });
+                            Future.delayed(Duration(milliseconds: 1000), () {
+                              Navigator.pop(context);
+                            });
+                          },
+                          child: Container(
+                              child: Icon(
+                            Icons.clear_rounded,
+                            color: Colors.white,
+                            size: 35.0,
+                          )),
                         ),
                       ),
-                      SizedBox(
-                        height: 43.0,
-                      ),
-                      Text(
-                        "Feel free to contact me anytimes",
-                        style: GoogleFonts.poppins(
-                            fontSize: 15.0,
-                            color: Colors.white70,
-                            fontWeight: FontWeight.w400),
-                      ),
-                      SizedBox(
-                        height: 8.0,
-                      ),
-                      Text(
-                        "Get in Touch",
-                        style: GoogleFonts.poppins(
-                            fontSize: 46.0,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.white),
-                      ),
-                      SizedBox(
-                        height: 112.0,
-                      ),
-                      MediaQuery.of(context).size.width > 1000
-                          ? Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                MessageMe(),
-                                SizedBox(
-                                  width: 45.0,
-                                ),
-                                ContactInfo(),
-                              ],
-                            )
-                          : Column(
-                              children: [
-                                MessageMe(),
-                                SizedBox(
-                                  width: 45.0,
-                                ),
-                                ContactInfo(),
-                              ],
-                            )
-                    ],
-                  ),
+                    ),
+                    SizedBox(
+                      height: 43.0,
+                    ),
+                    Text(
+                      "Feel free to contact us anytimes",
+                      style: GoogleFonts.poppins(
+                          fontSize: 15.0,
+                          color: Colors.white70,
+                          fontWeight: FontWeight.w400),
+                    ),
+                    SizedBox(
+                      height: 8.0,
+                    ),
+                    Text(
+                      "Get in Touch",
+                      style: GoogleFonts.poppins(
+                          fontSize: 46.0,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white),
+                    ),
+                    SizedBox(
+                      height: 112.0,
+                    ),
+                    MediaQuery.of(context).size.width > 1000
+                        ? Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              MessageMe(),
+                              SizedBox(
+                                width: 45.0,
+                              ),
+                              ContactInfo(),
+                            ],
+                          )
+                        : Column(
+                            children: [
+                              MessageMe(),
+                              SizedBox(
+                                width: 45.0,
+                              ),
+                              ContactInfo(),
+                            ],
+                          )
+                  ],
                 ),
               ),
-            
+            ),
             Container(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
@@ -164,7 +163,7 @@ class _MessageMeState extends State<MessageMe> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Message me",
+            "Message Us",
             style: GoogleFonts.poppins(
                 fontSize: 25.0,
                 color: Colors.white,
@@ -208,30 +207,90 @@ class _MessageMeState extends State<MessageMe> {
           SizedBox(
             height: 25.0,
           ),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Container(
-              height: 50,
-              width: 200,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50.0),
-                color: Color(0xff009e66),
-              ),
-              child: Center(
-                child: Text(
-                  "Send Message",
-                  style: GoogleFonts.poppins(
-                      fontSize: 18.0,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500),
+          HoverEffectButton(
+            child: FittedBox(
+              child: OutlinedButton(
+                onPressed: () {
+                  openDialog();
+                },
+                style: ButtonStyle(
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18),
+                    ),
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Image.asset(
+                        "assets/images/hand.png",
+                        height: 25,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      const Text(
+                        "Fill the form",
+                        style: TextStyle(
+                          color: Colors.white,
+                          //fontFamily: kDefaultFontFamily,
+                          fontWeight: FontWeight.w100,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
-          )
+          ),
+          // Align(
+          //   alignment: Alignment.centerLeft,
+          //   child: Container(
+          //     height: 50,
+          //     width: 200,
+          //     decoration: BoxDecoration(
+          //       borderRadius: BorderRadius.circular(50.0),
+          //       color: Color(0xff009e66),
+          //     ),
+          //     child: Center(
+          //       child: Text(
+          //         "Send Message",
+          //         style: GoogleFonts.poppins(
+          //             fontSize: 18.0,
+          //             color: Colors.white,
+          //             fontWeight: FontWeight.w500),
+          //       ),
+          //     ),
+          //   ),
+          // )
         ],
       ),
     );
   }
+
+  Future openDialog() => showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text("Google Form"),
+          // content: TextField(
+          //   decoration: InputDecoration(hintText: "Enter your Name"),
+          // ),
+          actions: [
+            TextButton(
+                child: Text("Fill"),
+                onPressed: () async {
+                  final url =
+                      "https://docs.google.com/forms/d/e/1FAIpQLSc0DQyrIzEK9j-OOaq9btmyCE0bMV38xEp4QDIz4105h2quNg/viewform";
+                  if (await canLaunch(url)) {
+                    await launch(url);
+                  }
+                })
+          ],
+        ),
+      );
 }
 
 class ContactInfo extends StatefulWidget {
@@ -262,7 +321,7 @@ class _ContactInfoState extends State<ContactInfo> {
               height: 15.0,
             ),
             Text(
-              "Always available for freelance work if the right project comes along, Feel free to contact me!",
+              "Need help? Feel free to connect with us.",
               style: GoogleFonts.poppins(
                   fontSize: 15.0,
                   color: Colors.white70,
@@ -273,12 +332,12 @@ class _ContactInfoState extends State<ContactInfo> {
             ),
             ContactCard(
               head: "Name",
-              sub: "Emma Smith",
+              sub: "Sponsorgenix",
               icon: Icons.assignment_ind_outlined,
             ),
             ContactCard(
                 head: "Location",
-                sub: "4155 Mann Island, Liverpool, United Kingdom.",
+                sub: "28,1st main 1st cross bhumikalayout,Bangalore, India.",
                 icon: Icons.location_on),
             ContactCard(
                 head: "Call Me",
@@ -286,7 +345,7 @@ class _ContactInfoState extends State<ContactInfo> {
                 icon: Icons.phone_outlined),
             ContactCard(
               head: "Email Me",
-              sub: "emma@example.com",
+              sub: "contact@sponsorgenix.com",
               icon: Icons.send_outlined,
             ),
           ],
@@ -343,7 +402,7 @@ class _ContactCardState extends State<ContactCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 75,
+      height: 85,
       width: MediaQuery.of(context).size.width > 1000
           ? MediaQuery.of(context).size.width * 0.3
           : MediaQuery.of(context).size.width * 0.65,

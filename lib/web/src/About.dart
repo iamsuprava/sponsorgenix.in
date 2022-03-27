@@ -37,454 +37,475 @@ class _AboutState extends State<About> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Color(0xff101010),
-      body: Container(
-        height: size.height,
-        width: size.width,
-        child: Stack(
-          children: [
-            SingleChildScrollView(
-              controller: controller,
-              physics: NeverScrollableScrollPhysics(),
-              child: Center(
-                child: Column(
-                  children: [
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 25.0, right: 25.0),
-                        child: GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              height = MediaQuery.of(context).size.height;
-                            });
-                            Future.delayed(Duration(milliseconds: 1000), () {
-                              Navigator.pop(context);
-                            });
-                          },
-                          child: Container(
-                              child: Icon(
-                            Icons.clear_rounded,
-                            color: Colors.white,
-                            size: 35.0,
-                          )),
+      body: SingleChildScrollView(
+        child: Container(
+          height: size.height,
+          width: size.width,
+          child: Stack(
+            children: [
+              SingleChildScrollView(
+                controller: controller,
+                //physics: NeverScrollableScrollPhysics(),
+                child: Center(
+                  child: Column(
+                    children: [
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: Padding(
+                          padding:
+                              const EdgeInsets.only(top: 25.0, right: 25.0),
+                          child: GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                height = MediaQuery.of(context).size.height;
+                              });
+                              Future.delayed(Duration(milliseconds: 1000), () {
+                                Navigator.pop(context);
+                              });
+                            },
+                            child: Container(
+                                child: Icon(
+                              Icons.clear_rounded,
+                              color: Colors.white,
+                              size: 35.0,
+                            )),
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 40,
-                    ),
-                    Text(
-                      "Get to know me",
-                      style: GoogleFonts.poppins(
-                          fontSize: 15.0,
-                          color: Colors.white70,
-                          fontWeight: FontWeight.w400),
-                    ),
-                    SizedBox(
-                      height: 8.0,
-                    ),
-                    Text(
-                      "About Me",
-                      style: GoogleFonts.poppins(
-                          fontSize: 46.0,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.white),
-                    ),
-                    SizedBox(
-                      height: 40.0,
-                    ),
-                    BootstrapRow(height: 600, children: [
-                      BootstrapCol(
-                        sizes: 'col-md-12 col-lg-4 col-sm-12',
-                        child: MediaQuery.of(context).size.width < 992
-                            ? CircleAvatar(
-                                backgroundImage: NetworkImage(
-                                  "https://images.pexels.com/photos/3671083/pexels-photo-3671083.jpeg?cs=srgb&dl=pexels-katie-e-3671083.jpg&fm=jpg",
-                                ),
-                                radius: MediaQuery.of(context).size.width * 0.2)
-                            : Container(
-                                height: 500,
-                                child: Image(
-                                  image: NetworkImage(
-                                    "https://images.pexels.com/photos/3671083/pexels-photo-3671083.jpeg?cs=srgb&dl=pexels-katie-e-3671083.jpg&fm=jpg",
-                                  ),
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
+                      SizedBox(
+                        height: 40,
                       ),
-                      BootstrapCol(
-                        sizes: 'col-md-12 col-lg-8 col-sm-12',
-                        child: Container(
-                          height: 570.0,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              MediaQuery.of(context).size.width > 992
-                                  ? Container()
-                                  : SizedBox(
-                                      height: 35.0,
-                                    ),
-                              Text(
-                                "Who am i?",
-                                style: GoogleFonts.poppins(
-                                    fontSize: 25.0,
-                                    color: Color(0xff009e66),
-                                    fontWeight: FontWeight.w500),
-                              ),
-                              SizedBox(
-                                height: 6.0,
-                              ),
-                              AutoSizeText(
-                                "I\'m Emma Smith, a visual UX/UI Designer and Web Developer",
-                                maxLines: 2,
-                                style: GoogleFonts.poppins(
-                                    fontSize: 33.0,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w600),
-                              ),
-                              SizedBox(
-                                height: 15.0,
-                              ),
-                              AutoSizeText(
-                                "I am a freelancer based in the United Kingdom and i have been building noteworthy UX/UI designs and websites for years, which comply with the latest design trends. I help convert a vision and an idea into meaningful and useful products. Having a sharp eye for product evolution helps me prioritize tasks, iterate fast and deliver faster.",
-                                maxLines: 5,
-                                style: GoogleFonts.poppins(
-                                    fontSize: 16.0,
-                                    color: Colors.white70,
-                                    fontWeight: FontWeight.w400),
-                              ),
-                              SizedBox(
-                                height: 25.0,
-                              ),
-                              Container(
-                                width: double.maxFinite,
-                                height: 2.0,
-                                color: Colors.white70,
-                              ),
-                              Padding(
+                      Text(
+                        "Get to know us",
+                        style: GoogleFonts.poppins(
+                            fontSize: 15.0,
+                            color: Colors.white70,
+                            fontWeight: FontWeight.w400),
+                      ),
+                      SizedBox(
+                        height: 8.0,
+                      ),
+                      Text(
+                        "WHO WE ARE",
+                        style: GoogleFonts.poppins(
+                            fontSize: 46.0,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white),
+                      ),
+                      SizedBox(
+                        height: 40.0,
+                      ),
+                      BootstrapRow(height: 600, children: [
+                        // BootstrapCol(
+                        //   sizes: 'col-md-12 col-lg-4 col-sm-12',
+                        //   child: MediaQuery.of(context).size.width < 992
+                        //       ? CircleAvatar(
+                        //           backgroundImage: NetworkImage(
+                        //               "https://images.pexels.com/photo/man-holding-ice-cream-cone-under-cloud-1262302.jpg&fm=jpg"),
+                        //           radius:
+                        //               MediaQuery.of(context).size.width * 0.2)
+                        //       : Container(
+                        //           height: 500,
+                        //           child: Image.network(
+                        //               'https://i.gifer.com/kG0.gif'),
+
+                        //           //fit: BoxFit.cover,
+                        //         ),
+                        // ),
+
+                        BootstrapCol(
+                          sizes: 'col-md-12 col-lg-4 col-sm-12',
+                          child: MediaQuery.of(context).size.width < 992
+                              ? CircleAvatar(
+                                  radius:
+                                      MediaQuery.of(context).size.width * 0.2)
+                              : Container(
+                                  child: Image.asset(
+                                      'assets/images/ABOUTSX.png',
+                                      height: size.height * 0.9,
+                                      filterQuality: FilterQuality.high),
+                                  alignment: Alignment.center,
+                                ),
+                        ),
+
+                        BootstrapCol(
+                          sizes: 'col-md-12 col-lg-8 col-sm-12',
+                          child: Container(
+                            height: 570.0,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                MediaQuery.of(context).size.width > 992
+                                    ? Container()
+                                    : SizedBox(
+                                        height: 35.0,
+                                      ),
+                                Text(
+                                  "What is Sponsorgenix?",
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 25.0,
+                                      color: Color(0xff009e66),
+                                      fontWeight: FontWeight.w500),
+                                ),
+                                SizedBox(
+                                  height: 6.0,
+                                ),
+                                AutoSizeText(
+                                  "Sponsorgenix",
+                                  maxLines: 2,
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 33.0,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w600),
+                                ),
+                                SizedBox(
+                                  height: 15.0,
+                                ),
+                                AutoSizeText(
+                                  "We are Sponsorgenix. It's a creative company. Currently helping startups, personal brands and businesses to build, grow & manage their online presence. Our Services includes: website and cross platform application building, UI/UX designing, brand assets designing, poster and billboard designing, ads designing, content creation, social media handling, digital marketing and finally managing the backend of websites.",
+                                  maxLines: 5,
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 16.0,
+                                      color: Colors.white70,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                                SizedBox(
+                                  height: 25.0,
+                                ),
+                                Container(
+                                  width: double.maxFinite,
+                                  height: 2.0,
+                                  color: Colors.white70,
+                                ),
+                                Padding(
+                                    padding: EdgeInsets.only(top: 10.0),
+                                    child:
+                                        MediaQuery.of(context).size.width > 800
+                                            ? Row(
+                                                children: [
+                                                  Cvcard(
+                                                    text1: "Cofounders : ",
+                                                    text2:
+                                                        "Suprava Saha, Sagnik Sarnal",
+                                                  ),
+                                                  Spacer(),
+                                                  Cvcard(
+                                                    text1: "Mail : ",
+                                                    text2:
+                                                        "contact@sponsorgenix.in",
+                                                  ),
+                                                ],
+                                              )
+                                            : Column(
+                                                children: [
+                                                  Cvcard(
+                                                    text1: "Name : ",
+                                                    text2: "Emma Smith",
+                                                  ),
+                                                  Spacer(),
+                                                  Cvcard(
+                                                    text1: "Mail : ",
+                                                    text2: "example@gmail.com",
+                                                  ),
+                                                ],
+                                              )),
+                                Padding(
                                   padding: EdgeInsets.only(top: 10.0),
                                   child: MediaQuery.of(context).size.width > 800
                                       ? Row(
                                           children: [
-                                            Cvcard(
-                                              text1: "Name : ",
-                                              text2: "Emma Smith",
-                                            ),
+                                            // Cvcard(
+                                            //   text1: "Age : ",
+                                            //   text2: "21",
+                                            // ),
                                             Spacer(),
                                             Cvcard(
-                                              text1: "Mail : ",
-                                              text2: "example@gmail.com",
+                                              text1: "From : ",
+                                              text2: "Bangalore, India",
                                             ),
                                           ],
                                         )
                                       : Column(
                                           children: [
                                             Cvcard(
-                                              text1: "Name : ",
-                                              text2: "Emma Smith",
+                                              text1: "Age : ",
+                                              text2: "21",
                                             ),
                                             Spacer(),
                                             Cvcard(
-                                              text1: "Mail : ",
-                                              text2: "example@gmail.com",
+                                              text1: "From : ",
+                                              text2: "LiverPark,UK",
                                             ),
                                           ],
-                                        )),
-                              Padding(
-                                padding: EdgeInsets.only(top: 10.0),
-                                child: MediaQuery.of(context).size.width > 800
-                                    ? Row(
-                                        children: [
-                                          Cvcard(
-                                            text1: "Age : ",
-                                            text2: "21",
-                                          ),
-                                          Spacer(),
-                                          Cvcard(
-                                            text1: "From : ",
-                                            text2: "LiverPark,UK",
-                                          ),
-                                        ],
-                                      )
-                                    : Column(
-                                        children: [
-                                          Cvcard(
-                                            text1: "Age : ",
-                                            text2: "21",
-                                          ),
-                                          Spacer(),
-                                          Cvcard(
-                                            text1: "From : ",
-                                            text2: "LiverPark,UK",
-                                          ),
-                                        ],
+                                        ),
+                                ),
+                                SizedBox(
+                                  height: 35.0,
+                                ),
+                                Row(
+                                  children: [
+                                    Container(
+                                      height: 45,
+                                      width: 200,
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(50.0),
+                                        color: Color(0xff009e66),
                                       ),
-                              ),
-                              SizedBox(
-                                height: 35.0,
-                              ),
-                              Row(
-                                children: [
-                                  Container(
-                                    height: 45,
-                                    width: 200,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(50.0),
-                                      color: Color(0xff009e66),
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        "Download CV",
-                                        style: GoogleFonts.poppins(
-                                            fontSize: 16.0,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w400),
+                                      child: Center(
+                                        child: Text(
+                                          "Connect with Us",
+                                          style: GoogleFonts.poppins(
+                                              fontSize: 16.0,
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.w400),
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  MediaQuery.of(context).size.width > 670
-                                      ? Container(
-                                          color: Colors.white70,
-                                          width: 100.0,
-                                          height: 1.0,
-                                          margin: EdgeInsets.only(
-                                              left: 7.0, right: 10.0),
-                                        )
-                                      : Container(),
-                                  MediaQuery.of(context).size.width > 670
-                                      ? Row(
-                                          children: [
-                                            SocialButtons(
-                                                url:
-                                                    "https://www.instagram.com/sponsorgenix",
-                                                child: Image.asset(
-                                                    "assets/images/Instagram_3d.png")),
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            SocialButtons(
-                                                url:
-                                                    "https://www.instagram.com/sponsorgenix",
-                                                child: Image.asset(
-                                                    "assets/images/Twitter_3d.png")),
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            SocialButtons(
-                                                url:
-                                                    "https://www.instagram.com/sponsorgenix",
-                                                child: Image.asset(
-                                                    "assets/images/LinkedIn_3d.png")),
-                                            SizedBox(
-                                              width: 15.0,
-                                            ),
-                                            // Icon(
-                                            //   AntDesign.github,
-                                            //   color: Colors.white70,
-                                            //   size: 18.0,
-                                            // ),
-                                            // SizedBox(
-                                            //   width: 15.0,
-                                            // ),
-                                            // Icon(
-                                            //   AntDesign.instagram,
-                                            //   color: Colors.white70,
-                                            //   size: 18.0,
-                                            // ),
-                                          ],
-                                        )
-                                      : Container(),
-                                ],
-                              )
-                            ],
+                                    MediaQuery.of(context).size.width > 670
+                                        ? Container(
+                                            color: Colors.white70,
+                                            width: 100.0,
+                                            height: 1.0,
+                                            margin: EdgeInsets.only(
+                                                left: 7.0, right: 10.0),
+                                          )
+                                        : Container(),
+                                    MediaQuery.of(context).size.width > 670
+                                        ? Row(
+                                            children: [
+                                              SocialButtons(
+                                                  url:
+                                                      "https://www.instagram.com/sponsorgenix",
+                                                  child: Image.asset(
+                                                      "assets/images/Instagram_3d.png")),
+                                              SizedBox(
+                                                height: 10,
+                                              ),
+                                              SocialButtons(
+                                                  url:
+                                                      "https://www.instagram.com/sponsorgenix",
+                                                  child: Image.asset(
+                                                      "assets/images/Twitter_3d.png")),
+                                              SizedBox(
+                                                height: 10,
+                                              ),
+                                              SocialButtons(
+                                                  url:
+                                                      "https://www.instagram.com/sponsorgenix",
+                                                  child: Image.asset(
+                                                      "assets/images/LinkedIn_3d.png")),
+                                              SizedBox(
+                                                width: 15.0,
+                                              ),
+                                              // Icon(
+                                              //   AntDesign.github,
+                                              //   color: Colors.white70,
+                                              //   size: 18.0,
+                                              // ),
+                                              // SizedBox(
+                                              //   width: 15.0,
+                                              // ),
+                                              // Icon(
+                                              //   AntDesign.instagram,
+                                              //   color: Colors.white70,
+                                              //   size: 18.0,
+                                              // ),
+                                            ],
+                                          )
+                                        : Container(),
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
+                        )
+                      ]),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: 40,
+                            ),
+                            Text(
+                              "     Services we offer ",
+                              style: GoogleFonts.poppins(
+                                  fontSize: 15.0,
+                                  color: Colors.white70,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                            SizedBox(
+                              height: 8.0,
+                            ),
+                            Text(
+                              "  Our Services",
+                              style: GoogleFonts.poppins(
+                                  fontSize: 46.0,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white),
+                            ),
+                            SizedBox(
+                              height: 25.0,
+                            ),
+                          ],
+                        ),
+                      ),
+                      BootstrapRow(height: 300, children: [
+                        BootstrapCol(
+                          sizes: 'col-sm-12 col-md-12 col-lg-6',
+                          child: ServiceCard(
+                            icon: Icons.sanitizer_rounded,
+                            head: "Design Trends",
+                            sub:
+                                "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+                          ),
+                        ),
+                        BootstrapCol(
+                          sizes: 'col-sm-12 col-md-12 col-lg-6',
+                          child: ServiceCard(
+                            icon: Icons.book_rounded,
+                            head: "PSD Design",
+                            sub:
+                                "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+                          ),
+                        ),
+                        BootstrapCol(
+                          sizes: 'col-sm-12 col-md-12 col-lg-6',
+                          child: ServiceCard(
+                            icon: Icons.thumbs_up_down_rounded,
+                            head: "Customer Support",
+                            sub:
+                                "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+                          ),
+                        ),
+                        BootstrapCol(
+                          sizes: 'col-sm-12 col-md-12 col-lg-6',
+                          child: ServiceCard(
+                            icon: Icons.laptop_chromebook_rounded,
+                            head: "Web Development",
+                            sub:
+                                "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+                          ),
+                        ),
+                        BootstrapCol(
+                          sizes: 'col-sm-12 col-md-12 col-lg-6',
+                          child: ServiceCard(
+                            icon: Icons.facebook_rounded,
+                            head: "Fully Responsive",
+                            sub:
+                                "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+                          ),
+                        ),
+                        BootstrapCol(
+                          sizes: 'col-sm-12 col-md-12 col-lg-6',
+                          child: ServiceCard(
+                            icon: Icons.pie_chart_outline_rounded,
+                            head: "Branding",
+                            sub:
+                                "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+                          ),
+                        ),
+                      ]),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: 40,
+                            ),
+                            Text(
+                              "     Get started with my services",
+                              style: GoogleFonts.poppins(
+                                  fontSize: 15.0,
+                                  color: Colors.white70,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                            SizedBox(
+                              height: 8.0,
+                            ),
+                            Text(
+                              "  Choose a Plan",
+                              style: GoogleFonts.poppins(
+                                  fontSize: 46.0,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white),
+                            ),
+                            SizedBox(
+                              height: 25.0,
+                            ),
+                            Align(
+                              alignment: Alignment.center,
+                              child: Container(
+                                width: MediaQuery.of(context).size.width < 700
+                                    ? MediaQuery.of(context).size.width * 0.6
+                                    : MediaQuery.of(context).size.width * 0.9,
+                                child: BootstrapRow(
+                                  height: 500,
+                                  children: [
+                                    BootstrapCol(
+                                      sizes: 'col-sm-12 col-md-12 col-lg-4',
+                                      child: PlanCard(
+                                        icon: Icons.language,
+                                        btext: "Get Started",
+                                      ),
+                                    ),
+                                    BootstrapCol(
+                                      sizes: 'col-sm-12 col-md-12 col-lg-4',
+                                      child: PlanCard(
+                                        icon: Icons.person_rounded,
+                                        btext: "Get pro",
+                                      ),
+                                    ),
+                                    BootstrapCol(
+                                      sizes: 'col-sm-12 col-md-12 col-lg-4',
+                                      child: PlanCard(
+                                        icon: Icons.sanitizer_rounded,
+                                        btext: "Get Started",
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            )
+                          ],
                         ),
                       )
-                    ]),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: 40,
-                          ),
-                          Text(
-                            "     Services i offer to my clients",
-                            style: GoogleFonts.poppins(
-                                fontSize: 15.0,
-                                color: Colors.white70,
-                                fontWeight: FontWeight.w400),
-                          ),
-                          SizedBox(
-                            height: 8.0,
-                          ),
-                          Text(
-                            "  My Services",
-                            style: GoogleFonts.poppins(
-                                fontSize: 46.0,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white),
-                          ),
-                          SizedBox(
-                            height: 25.0,
-                          ),
-                        ],
-                      ),
-                    ),
-                    BootstrapRow(height: 300, children: [
-                      BootstrapCol(
-                        sizes: 'col-sm-12 col-md-12 col-lg-6',
-                        child: ServiceCard(
-                          icon: Icons.sanitizer_rounded,
-                          head: "Design Trends",
-                          sub:
-                              "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-                        ),
-                      ),
-                      BootstrapCol(
-                        sizes: 'col-sm-12 col-md-12 col-lg-6',
-                        child: ServiceCard(
-                          icon: Icons.book_rounded,
-                          head: "PSD Design",
-                          sub:
-                              "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-                        ),
-                      ),
-                      BootstrapCol(
-                        sizes: 'col-sm-12 col-md-12 col-lg-6',
-                        child: ServiceCard(
-                          icon: Icons.thumbs_up_down_rounded,
-                          head: "Customer Support",
-                          sub:
-                              "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-                        ),
-                      ),
-                      BootstrapCol(
-                        sizes: 'col-sm-12 col-md-12 col-lg-6',
-                        child: ServiceCard(
-                          icon: Icons.laptop_chromebook_rounded,
-                          head: "Web Development",
-                          sub:
-                              "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-                        ),
-                      ),
-                      BootstrapCol(
-                        sizes: 'col-sm-12 col-md-12 col-lg-6',
-                        child: ServiceCard(
-                          icon: Icons.facebook_rounded,
-                          head: "Fully Responsive",
-                          sub:
-                              "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-                        ),
-                      ),
-                      BootstrapCol(
-                        sizes: 'col-sm-12 col-md-12 col-lg-6',
-                        child: ServiceCard(
-                          icon: Icons.pie_chart_outline_rounded,
-                          head: "Branding",
-                          sub:
-                              "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-                        ),
-                      ),
-                    ]),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: 40,
-                          ),
-                          Text(
-                            "     Get started with my services",
-                            style: GoogleFonts.poppins(
-                                fontSize: 15.0,
-                                color: Colors.white70,
-                                fontWeight: FontWeight.w400),
-                          ),
-                          SizedBox(
-                            height: 8.0,
-                          ),
-                          Text(
-                            "  Choose a Plan",
-                            style: GoogleFonts.poppins(
-                                fontSize: 46.0,
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white),
-                          ),
-                          SizedBox(
-                            height: 25.0,
-                          ),
-                          Align(
-                            alignment: Alignment.center,
-                            child: Container(
-                              width: MediaQuery.of(context).size.width < 700
-                                  ? MediaQuery.of(context).size.width * 0.6
-                                  : MediaQuery.of(context).size.width * 0.9,
-                              child: BootstrapRow(
-                                height: 500,
-                                children: [
-                                  BootstrapCol(
-                                    sizes: 'col-sm-12 col-md-12 col-lg-4',
-                                    child: PlanCard(
-                                      icon: Icons.language,
-                                      btext: "Get Started",
-                                    ),
-                                  ),
-                                  BootstrapCol(
-                                    sizes: 'col-sm-12 col-md-12 col-lg-4',
-                                    child: PlanCard(
-                                      icon: Icons.person_rounded,
-                                      btext: "Get pro",
-                                    ),
-                                  ),
-                                  BootstrapCol(
-                                    sizes: 'col-sm-12 col-md-12 col-lg-4',
-                                    child: PlanCard(
-                                      icon: Icons.sanitizer_rounded,
-                                      btext: "Get Started",
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          )
-                        ],
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                child: Stack(
+                  children: [
+                    Positioned(
+                      top: condition ? null : 0,
+                      bottom: condition ? 0 : null,
+                      child: AnimatedContainer(
+                        duration: Duration(milliseconds: 400),
+                        curve: Curves.easeInOut,
+                        onEnd: () {
+                          // setState(() {
+                          //   condition ? condition = false : condition = true;
+                          //   Future.delayed(Duration(milliseconds: 400), () {
+                          //     height = 0;
+                          //   });
+                          // });
+                        },
+                        height: height,
+                        width: MediaQuery.of(context).size.width,
+                        color: Colors.black,
                       ),
                     )
                   ],
                 ),
               ),
-            ),
-            Container(
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-              child: Stack(
-                children: [
-                  Positioned(
-                    top: condition ? null : 0,
-                    bottom: condition ? 0 : null,
-                    child: AnimatedContainer(
-                      duration: Duration(milliseconds: 400),
-                      curve: Curves.easeInOut,
-                      onEnd: () {
-                        // setState(() {
-                        //   condition ? condition = false : condition = true;
-                        //   Future.delayed(Duration(milliseconds: 400), () {
-                        //     height = 0;
-                        //   });
-                        // });
-                      },
-                      height: height,
-                      width: MediaQuery.of(context).size.width,
-                      color: Colors.black,
-                    ),
-                  )
-                ],
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
