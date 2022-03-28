@@ -32,8 +32,10 @@ class _SocialButtonsState extends State<SocialButtons> {
             onPressed: () async {
               if (await canLaunch(widget.url)) {
                 await launch(widget.url);
-              } else
-                print("Currently unavailable");
+              } else {
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: Text("Something went wrong, try again later")));
+              }
             },
             icon: widget.child,
             iconSize: 25,

@@ -12,6 +12,7 @@ class HomeDiscoverUsWeb extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
+      
       height: size.height,
       width: size.width,
       decoration: const BoxDecoration(

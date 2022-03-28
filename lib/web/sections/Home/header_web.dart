@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 
 import 'package:sponsorgenix/constants.dart';
 import 'package:sponsorgenix/web/widgets/social_buttons_web.dart';
 
 class HeaderSectionWeb extends StatefulWidget {
-  const HeaderSectionWeb({Key? key}) : super(key: key);
+  final Widget down_key;
+  const HeaderSectionWeb({Key? key, required this.down_key}) : super(key: key);
 
   @override
   State<HeaderSectionWeb> createState() => _HeaderSectionWebState();
@@ -127,14 +129,15 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb> {
                   ),
                   Spacer(),
                   SocialButtons(
-                      url: "https://www.instagram.com/sponsorgenix",
+                      url: "https://twitter.com/sponsorgenix",
                       child: Image.asset("assets/images/Twitter_3d.png")),
                   Spacer(),
                   SocialButtons(
-                      url: "https://www.instagram.com/sponsorgenix",
-                      child: Image.asset(
-                        "assets/images/LinkedIn_3d.png",
-                      ))
+                    url: "https://www.instagram.com/sponsorgenix",
+                    child: Image.asset(
+                      "assets/images/LinkedIn_3d.png",
+                    ),
+                  )
                 ],
               ),
             ),
@@ -167,6 +170,11 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb> {
           //     ),
           //   ),
           // ),
+          Positioned(
+            left: size.width / 2,
+            bottom: 0,
+            child: widget.down_key,
+          ),
         ],
       ),
     );

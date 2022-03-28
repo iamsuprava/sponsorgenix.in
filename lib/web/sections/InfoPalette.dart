@@ -12,62 +12,65 @@ class InfoPalette extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          padding: EdgeInsets.all(6.0),
-          decoration: BoxDecoration(
-            color: Colors.grey[900], //grey[900],
-            borderRadius: BorderRadius.circular(12.0),
-          ),
-          child: Icon(
-            icon,
-            size: 22.0,
-            color: Colors.white,
-          ),
-        ),
-        SizedBox(
-          height: 10.0,
-        ),
-        Text(
-          title,
-          style: GoogleFonts.nunito(
-            fontWeight: FontWeight.w800,
-            fontSize: 18.0,
-            color: Colors.white,
-          ),
-        ),
-        SizedBox(
-          height: 15.0,
-        ),
-        Container(
-          width: 200.0,
-          child: Text(
-            text,
-            style: GoogleFonts.nunito(
-              fontWeight: FontWeight.w400,
+    return Container(
+      height: 200,
+      width: 200,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            padding: EdgeInsets.all(6.0),
+            decoration: BoxDecoration(
+              color: Colors.grey[900], //grey[900],
+              borderRadius: BorderRadius.circular(12.0),
+            ),
+            child: Icon(
+              icon,
+              size: 22.0,
               color: Colors.white,
+            ),
+          ),
+          SizedBox(
+            height: 10.0,
+          ),
+          Text(
+            title,
+            style: GoogleFonts.nunito(
+              fontWeight: FontWeight.w800,
+              fontSize: 18.0,
+              color: Colors.white,
+            ),
+          ),
+          SizedBox(
+            height: 15.0,
+          ),
+          Container(
+            child: Text(
+              text,
+              style: GoogleFonts.nunito(
+                fontWeight: FontWeight.w400,
+                color: Colors.white,
+                fontSize: 14.0,
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 15.0,
+          ),
+          Text(
+            'Learn More....',
+            style: GoogleFonts.nunito(
+              fontWeight: FontWeight.w800,
               fontSize: 14.0,
             ),
           ),
-        ),
-        SizedBox(
-          height: 15.0,
-        ),
-        Text(
-          'Learn More....',
-          style: GoogleFonts.nunito(
-            fontWeight: FontWeight.w800,
-            fontSize: 14.0,
+          Container(
+            height: 1.5,
+            width: 90.0,
+            color: Colors.white, //black87
           ),
-        ),
-        Container(
-          height: 1.5,
-          width: 90.0,
-          color: Colors.white, //black87
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -283,10 +283,11 @@ class _AboutState extends State<About> {
                                                 height: 10,
                                               ),
                                               SocialButtons(
-                                                  url:
-                                                      "https://www.instagram.com/sponsorgenix",
-                                                  child: Image.asset(
-                                                      "assets/images/Twitter_3d.png")),
+                                                url:
+                                                    "https://twitter.com/sponsorgenix",
+                                                child: Image.asset(
+                                                    "assets/images/Twitter_3d.png"),
+                                              ),
                                               SizedBox(
                                                 height: 10,
                                               ),
