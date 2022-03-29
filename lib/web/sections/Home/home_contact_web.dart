@@ -68,7 +68,7 @@ class HomeContactUsWeb extends StatelessWidget {
                   height: 20.0,
                 ),
                 Text(
-                    "We’re ready to talk about your organization\n and your goals—and how we can partner\n you in this journey.\nJust fill out the form, and we’ll get back to you. \nIf you’d rather talk to a human right away,\n feel free to give us a call.",
+                    "We’re ready to talk about your organization\nand your goals—and how we can partner\nyou in this journey.\nJust fill out the form, and we’ll get back to you. \nIf you’d rather talk to a human right away,\nfeel free to give us a call.",
                     textAlign: TextAlign.left,
                     overflow: TextOverflow.ellipsis,
                     //style: TextStyle(fontWeight: FontWeight.bold),

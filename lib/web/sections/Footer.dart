@@ -257,7 +257,7 @@ class Footer extends StatelessWidget {
                 size: 15.0,
               ),
               Text(
-                '2020 All rights reserved',
+                '2022 All rights reserved',
                 style: GoogleFonts.nunito(
                   color: Colors.black54,
                   fontWeight: FontWeight.w500,

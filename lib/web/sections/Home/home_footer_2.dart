@@ -20,7 +20,7 @@ class _HomeFooter2State extends State<HomeFooter2> {
     return Container(
         height: size.height,
         width: size.width,
-        color: Colors.grey.shade900,
+        color: Color.fromARGB(255, 0, 0, 0), //grey.shade900
         child: Stack(
           clipBehavior: Clip.none,
           children: [

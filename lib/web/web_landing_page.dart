@@ -13,6 +13,7 @@ import 'package:sponsorgenix/web/sections/Home/home_footer_2.dart';
 import 'package:sponsorgenix/web/sections/Home/home_footer_3.dart';
 import 'package:sponsorgenix/web/sections/Home/home_footer_4.dart';
 import 'package:sponsorgenix/web/sections/Home/home_services_web.dart';
+//import 'package:sponsorgenix/web/widgets/glowing_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 //import 'package:sponsorgenix/web/sections/Recent%20Works/recent_works_web.dart';
 //import 'package:sponsorgenix/web/sections/Services/services_screen_web.dart';
@@ -192,6 +193,7 @@ class _WebLandingPageState extends State<WebLandingPage> {
                 HomeFooter2(pixels: pixels),
                 HomeFooter3(pixels: pixels),
                 HomeFooter4(pixels: pixels),
+                Footer(),
               ],
             ),
           ),
@@ -199,18 +201,59 @@ class _WebLandingPageState extends State<WebLandingPage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.miniStartFloat,
       floatingActionButton: FloatingActionButton(
+        child: Container(
+          width: 60,
+          height: 60,
+          child: Icon(
+            Icons.whatsapp_rounded,
+            size: 40,
+            color: Colors.white,
+          ),
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(20)),
+              //shape: BoxShape.circle,
+
+              gradient: LinearGradient(
+                  colors: [Colors.greenAccent, Colors.greenAccent]),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.cyan.withOpacity(0.6),
+                  spreadRadius: 1,
+                  blurRadius: 16,
+                  offset: Offset(-8, 0),
+                ),
+                BoxShadow(
+                  color: Colors.greenAccent.withOpacity(0.6),
+                  spreadRadius: 1,
+                  blurRadius: 16,
+                  offset: Offset(8, 0),
+                ),
+                BoxShadow(
+                  color: Colors.cyan.withOpacity(0.2),
+                  spreadRadius: 16,
+                  blurRadius: 32,
+                  offset: Offset(-8, 0),
+                ),
+                BoxShadow(
+                  color: Colors.greenAccent.withOpacity(0.2),
+                  spreadRadius: 16,
+                  blurRadius: 32,
+                  offset: Offset(8, 0),
+                )
+              ]),
+        ),
         onPressed: () {
           openDialog();
         },
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
-        backgroundColor: const Color(0xFF25D366),
-        child: const Icon(
-          Icons.whatsapp_rounded,
-          size: 40,
-          color: Colors.white,
-        ),
+        // shape: RoundedRectangleBorder(
+        //   borderRadius: BorderRadius.circular(20),
+        // ),
+        // backgroundColor: const Color(0xFF25D366),
+        // child: const Icon(
+        //   Icons.whatsapp_rounded,
+        //   size: 40,
+        //   color: Colors.white,
+        // ),
       ),
     );
   }
@@ -218,6 +261,7 @@ class _WebLandingPageState extends State<WebLandingPage> {
   Future openDialog() => showDialog(
         context: context,
         builder: (context) => AlertDialog(
+          backgroundColor: Colors.greenAccent,
           title: Text("Your Name"),
           content: TextField(
             decoration: InputDecoration(hintText: "Enter your Name"),

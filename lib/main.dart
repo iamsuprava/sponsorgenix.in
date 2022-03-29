@@ -55,7 +55,8 @@ class RootWidget extends StatelessWidget {
 }
 
 Widget mobileView() {
-  return MobileLandingPage();
+  //return MobileLandingPage();
+  return WebLandingPage();
 }
 
 Widget desktopView() {

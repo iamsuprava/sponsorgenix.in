@@ -16,7 +16,7 @@ class _HomeFooter3State extends State<HomeFooter3> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.height,
+      height: size.height / 1.3,
       width: size.width,
       child: Stack(
         children: [
@@ -37,6 +37,9 @@ class _HomeFooter3State extends State<HomeFooter3> {
                     fontSize: 14.0,
                   ),
                 ),
+                SizedBox(
+                  height: 100.0,
+                ),
                 AnimatedAlign(
                   alignment: widget.pixels >= size.height * 4.5
                       ? const Alignment(0.0, 0.0)
@@ -56,7 +59,7 @@ class _HomeFooter3State extends State<HomeFooter3> {
                               top: -60.0,
                               child: Icon(
                                 Icons.format_quote,
-                                color: Colors.grey[300],
+                                color: Colors.grey[700], //grey[300]
                                 size: 150.0,
                               ),
                             ),
