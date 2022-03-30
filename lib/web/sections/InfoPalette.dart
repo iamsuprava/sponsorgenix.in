@@ -16,7 +16,7 @@ class InfoPalette extends StatelessWidget {
       height: 200,
       width: 200,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             padding: EdgeInsets.all(6.0),

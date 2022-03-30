@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import '../../../web/sections/InfoPalette.dart';
 
 class FooterMobile extends StatelessWidget {
-  const FooterMobile({Key? key}) : super(key: key);
+  final double pixels;
+  const FooterMobile({Key? key, required this.pixels}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +14,115 @@ class FooterMobile extends StatelessWidget {
       height: size.height * 0.75,
       width: size.width,
       child: Stack(
-        children: [],
+        fit: StackFit.expand,
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("How it works ?"),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  AnimatedOpacity(
+                    duration: const Duration(milliseconds: 500),
+                    opacity: pixels >= (size.height * 2.1) ? 1.0 : 0.0,
+                    child: AnimatedPadding(
+                        duration: const Duration(milliseconds: 500),
+                        padding: EdgeInsets.only(
+                            left: pixels >= (size.height * 2.1) ? 100 : 0),
+                        child: _infoPallete(context,
+                            text: "Community",
+                            title: "Communicate with friends",
+                            icon: Icons.people_alt_rounded)),
+                  ),
+                  _infoPallete(
+                    context,
+                    title: 'Overview Reports',
+                    text:
+                        'Track your progress thanks to the reporting system right inside the platform.',
+                    icon: Icons.pie_chart_rounded,
+                  ),
+                  _infoPallete(
+                    context,
+                    title: 'Dashboard',
+                    text:
+                        'Manage your projects and tasks by tracking activity on the dashboard.',
+                    icon: Icons.person_rounded,
+                  )
+                ],
+              )
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _infoPallete(
+    BuildContext context, {
+    required IconData icon,
+    required String text,
+    required String title,
+  }) {
+    Size size = MediaQuery.of(context).size;
+    return Container(
+      height: size.height * 0.6,
+      width: size.width * 0.1,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            padding: EdgeInsets.all(6.0),
+            decoration: BoxDecoration(
+              color: Colors.grey[900],
+              borderRadius: BorderRadius.circular(12.0),
+            ),
+            child: Icon(
+              icon,
+              size: 22.0,
+              color: Colors.white,
+            ),
+          ),
+          SizedBox(
+            height: 10.0,
+          ),
+          Text(
+            title,
+            style: GoogleFonts.nunito(
+              fontWeight: FontWeight.w800,
+              fontSize: 18.0,
+              color: Colors.white,
+            ),
+          ),
+          SizedBox(
+            height: 15.0,
+          ),
+          Container(
+            child: Text(
+              text,
+              style: GoogleFonts.nunito(
+                fontWeight: FontWeight.w400,
+                color: Colors.white,
+                fontSize: 14.0,
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 15.0,
+          ),
+          Text(
+            'Learn More....',
+            style: GoogleFonts.nunito(
+              fontWeight: FontWeight.w800,
+              fontSize: 14.0,
+            ),
+          ),
+          Container(
+            height: 1.5,
+            width: 10.0,
+            color: Colors.white, //black87
+          ),
+        ],
       ),
     );
   }

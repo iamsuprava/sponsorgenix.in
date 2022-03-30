@@ -4,6 +4,7 @@ import 'mobile/mobile_landing_page.dart';
 import 'web/web_landing_page.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MaterialApp(home: MyApp()));
 }
 

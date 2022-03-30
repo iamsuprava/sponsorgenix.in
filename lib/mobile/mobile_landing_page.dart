@@ -6,7 +6,6 @@ import 'package:sponsorgenix/mobile/sections/Home/mobile_footer.dart';
 import 'package:sponsorgenix/mobile/sections/Home/mobile_footer_2.dart';
 import 'package:sponsorgenix/mobile/sections/Home/mobile_home_header.dart';
 import 'package:sponsorgenix/mobile/sections/Home/mobile_services.dart';
-
 import 'navigation/nav_drawer.dart';
 
 class MobileLandingPage extends StatefulWidget {
@@ -17,6 +16,24 @@ class MobileLandingPage extends StatefulWidget {
 }
 
 class _MobileLandingPageState extends State<MobileLandingPage> {
+  final _scrollController = ScrollController();
+  double pixels = 0.0;
+  @override
+  void initState() {
+    super.initState();
+    _scrollController.addListener(() {
+      setState(() {
+        pixels = _scrollController.position.pixels;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -34,13 +51,16 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
           ),
           extendBodyBehindAppBar: true,
           body: SingleChildScrollView(
+            controller: _scrollController,
             child: Column(
               children: [
                 MobileHomeHeader(),
                 MobileDiscoverUs(),
                 MobileServices(),
                 MobileContactUs(),
-                FooterMobile(),
+                FooterMobile(
+                  pixels: pixels,
+                ),
                 FooterMobile2(),
               ],
             ),
