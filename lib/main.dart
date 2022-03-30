@@ -44,7 +44,7 @@ class RootWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: ((context, constraints) {
-        if (constraints.maxWidth > 930) {
+        if (constraints.maxWidth > 1000) {
           return desktopView();
         } else {
           return mobileView();
@@ -55,8 +55,7 @@ class RootWidget extends StatelessWidget {
 }
 
 Widget mobileView() {
-  //return MobileLandingPage();
-  return WebLandingPage();
+  return MobileLandingPage();
 }
 
 Widget desktopView() {

@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sponsorgenix/web/widgets/animated_lottie_connect_us.dart';
 
-class HomeContactUsWeb extends StatelessWidget {
-  const HomeContactUsWeb({Key? key}) : super(key: key);
+class MobileContactUs extends StatelessWidget {
+  const MobileContactUs({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.height,
+      height: size.height * 0.75,
       width: size.width,
       decoration: const BoxDecoration(
         image: DecorationImage(
@@ -52,7 +51,7 @@ class HomeContactUsWeb extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: 800.0,
+            left: 300,
             bottom: 200,
             child: Column(
               children: [
@@ -71,7 +70,6 @@ class HomeContactUsWeb extends StatelessWidget {
                     "We’re ready to talk about your organization\nand your goals—and how we can partner\nyou in this journey.\nJust fill out the form, and we’ll get back to you. \nIf you’d rather talk to a human right away,\nfeel free to give us a call.",
                     textAlign: TextAlign.left,
                     overflow: TextOverflow.ellipsis,
-                    //style: TextStyle(fontWeight: FontWeight.bold),
                     style: GoogleFonts.nunito(
                       fontSize: 25.0,
                       fontWeight: FontWeight.w400, //w700
@@ -79,19 +77,6 @@ class HomeContactUsWeb extends StatelessWidget {
                 SizedBox(
                   height: 30.0,
                 ),
-                // TextButton(
-                //   child: Text(
-                //     "Start",
-                //     style: TextStyle(fontSize: 25),
-                //   ),
-                //   onPressed: () {},
-                //   style: TextButton.styleFrom(
-                //       primary: Colors.black,
-                //       elevation: 2,
-                //       backgroundColor: Colors.white),
-                // ),
-                //edit here
-                AnimatedContactUsButton(),
               ],
             ),
           )

@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 
-class FloatingCubes extends StatelessWidget {
+class FloatingCubeMini extends StatelessWidget {
   final String assetLink;
-  const FloatingCubes({Key? key, required this.assetLink}) : super(key: key);
+  const FloatingCubeMini({Key? key, required this.assetLink}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 250,
-      width: 250,
+      height: 150,
+      width: 150,
       child: RiveAnimation.asset(
         assetLink,
-        fit: BoxFit.cover,
+        fit: BoxFit.contain,
       ),
       alignment: Alignment.center,
     );

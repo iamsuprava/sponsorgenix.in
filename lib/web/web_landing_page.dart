@@ -53,29 +53,35 @@ class _WebLandingPageState extends State<WebLandingPage> {
     });
   }
 
-  Future goToHeader() async {
-    final context = _homeHeaderKey.currentContext!;
-    await Scrollable.ensureVisible(context,
-        alignment: 0, duration: Duration(milliseconds: 300));
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 
-  Future goToHomeDiscover() async {
-    final context = _homeDiscoverUsKey.currentContext!;
-    await Scrollable.ensureVisible(context,
-        alignment: 0, duration: Duration(milliseconds: 300));
-  }
+  // Future goToHeader() async {
+  //   final context = _homeHeaderKey.currentContext!;
+  //   await Scrollable.ensureVisible(context,
+  //       alignment: 0, duration: Duration(milliseconds: 300));
+  // }
 
-  Future goToHomeServices() async {
-    final context = _homeServicesKey.currentContext!;
-    await Scrollable.ensureVisible(context,
-        alignment: 0, duration: Duration(milliseconds: 300));
-  }
+  // Future goToHomeDiscover() async {
+  //   final context = _homeDiscoverUsKey.currentContext!;
+  //   await Scrollable.ensureVisible(context,
+  //       alignment: 0, duration: Duration(milliseconds: 300));
+  // }
 
-  Future goToHomeContacts() async {
-    final context = _homeContactUsKey.currentContext!;
-    await Scrollable.ensureVisible(context,
-        alignment: 0.5, duration: Duration(milliseconds: 300));
-  }
+  // Future goToHomeServices() async {
+  //   final context = _homeServicesKey.currentContext!;
+  //   await Scrollable.ensureVisible(context,
+  //       alignment: 0, duration: Duration(milliseconds: 300));
+  // }
+
+  // Future goToHomeContacts() async {
+  //   final context = _homeContactUsKey.currentContext!;
+  //   await Scrollable.ensureVisible(context,
+  //       alignment: 0.5, duration: Duration(milliseconds: 300));
+  // }
 
   @override
   Widget build(BuildContext context) {
