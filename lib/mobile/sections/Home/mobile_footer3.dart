@@ -79,7 +79,7 @@ class _HomeFooter2State extends State<MobileFooter3> {
                               widget.pixels >= (size.height * 3.83) ? 1.0 : 0,
                           child: Container(
                             width: size.width * 0.3,
-                            height: size.height * 0.35,
+                            height: size.height * 0.37,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [

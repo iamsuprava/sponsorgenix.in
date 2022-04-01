@@ -11,7 +11,7 @@ class MobileDiscoverUs extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.height * 0.75,
+      height: size.height * 0.8,
       width: size.width,
       decoration: const BoxDecoration(
           image: DecorationImage(
@@ -23,70 +23,66 @@ class MobileDiscoverUs extends StatelessWidget {
       child: Stack(
         fit: StackFit.expand,
         children: [
+          Padding(
+              padding: EdgeInsets.fromLTRB(
+                  size.width * 0.01, size.height * 0.3, size.width * 0.7, 0),
+              child: const FloatingCubeMini(
+                  assetLink: "assets/images/Floating_Cube_01.riv")),
+          Padding(
+            padding:
+                EdgeInsets.fromLTRB(size.width * 0.4, size.height * 0.3, 0, 0),
+            child: const FloatingCubeMini(
+              assetLink: "assets/images/Floating_cube_02.riv",
+            ),
+          ),
+          Positioned(
+            left: 0,
+            bottom: 0,
+            child: Container(
+              height: size.height * 0.4,
+              width: size.width * 0.45, //0.45
+              child: Image.asset('assets/images/A1.png',
+                  fit: BoxFit.contain, filterQuality: FilterQuality.high),
+              alignment: Alignment.center,
+            ),
+          ),
+
           // Positioned(
           //     left: 0,
           //     top: size.height * 0.3,
           //     child: const FloatingCubeMini(
           //         assetLink: "assets/images/Floating_Cube_01.riv")),
           // Positioned(
-          //   right: size.width * 0.42,
+          //   right: size.width * 0.20, //0.42
           //   bottom: size.height * 0.14,
           //   child: const FloatingCubeMini(
           //     assetLink: "assets/images/Floating_cube_02.riv",
           //   ),
           // ),
-          Row(
-            children: [
-              Padding(
-                padding: EdgeInsets.fromLTRB(
-                    size.width * 0.1, //0.1
-                    size.height * 0.25, //0.25
-                    0,
-                    0), // size.width * 0.1, size.height * 0.25, 0, 0)
-                child: Container(
-                  height: size.height * 0.45, //0.45
-                  child: Image.asset('assets/images/A1.png',
-                      fit: BoxFit.contain, filterQuality: FilterQuality.high),
-                  alignment: Alignment.center,
-                ),
-              ),
-            ],
-          ),
           Positioned(
-              left: 0,
-              top: size.height * 0.3,
-              child: const FloatingCubeMini(
-                  assetLink: "assets/images/Floating_Cube_01.riv")),
-          Positioned(
-            right: size.width * 0.20, //0.42
-            bottom: size.height * 0.14,
-            child: const FloatingCubeMini(
-              assetLink: "assets/images/Floating_cube_02.riv",
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.fromLTRB(size.width * 0.4, size.height * 0.1,
-                size.width * 0.05, size.height * 0.1),
+            right: size.width * 0.07,
+            top: size.height * 0.15,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
                   "Discover Us",
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.ellipsis,
                   style: GoogleFonts.nunito(
-                    fontSize: 24.0,
+                    fontSize: 21.0,
                     fontWeight: FontWeight.w700, //w700
                   ),
                 ),
                 const SizedBox(
-                  height: 20.0,
+                  height: 15.0,
                 ),
                 Text(
                   "Welcome to Sponsorgenix.\nComplete branding solutions & \ndesign services company across India.\n It’s a creative company currently helping startups,\n personal brands and businesses to build grow & \n manage their online  presence.",
                   textAlign: TextAlign.left,
                   overflow: TextOverflow.ellipsis,
                   style: GoogleFonts.nunito(
-                    fontSize: 18.0,
+                    fontSize: 14.0,
                     fontWeight: FontWeight.w400,
                   ),
                 ),

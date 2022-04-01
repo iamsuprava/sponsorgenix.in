@@ -8,7 +8,7 @@ class MobileContactUs extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.height * 0.75,
+      height: size.height * 0.8,
       width: size.width,
       decoration: const BoxDecoration(
         image: DecorationImage(

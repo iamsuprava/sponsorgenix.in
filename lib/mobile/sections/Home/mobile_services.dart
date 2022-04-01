@@ -10,7 +10,7 @@ class MobileServices extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.height * 0.88, //0.75
+      height: size.height * 0.8, //0.75
       width: size.width,
       decoration: const BoxDecoration(
         image: DecorationImage(

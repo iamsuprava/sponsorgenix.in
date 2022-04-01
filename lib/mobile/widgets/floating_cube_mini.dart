@@ -8,8 +8,8 @@ class FloatingCubeMini extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
-      width: 150,
+      height: 100,
+      width: 100,
       child: RiveAnimation.asset(
         assetLink,
         fit: BoxFit.contain,
