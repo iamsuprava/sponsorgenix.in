@@ -23,31 +23,46 @@ class MobileDiscoverUs extends StatelessWidget {
       child: Stack(
         fit: StackFit.expand,
         children: [
-          Positioned(
-              left: 0,
-              top: size.height * 0.3,
-              child: const FloatingCubeMini(
-                  assetLink: "assets/images/Floating_Cube_01.riv")),
-          Positioned(
-            right: size.width * 0.42,
-            bottom: size.height * 0.14,
-            child: const FloatingCubeMini(
-              assetLink: "assets/images/Floating_cube_02.riv",
-            ),
-          ),
+          // Positioned(
+          //     left: 0,
+          //     top: size.height * 0.3,
+          //     child: const FloatingCubeMini(
+          //         assetLink: "assets/images/Floating_Cube_01.riv")),
+          // Positioned(
+          //   right: size.width * 0.42,
+          //   bottom: size.height * 0.14,
+          //   child: const FloatingCubeMini(
+          //     assetLink: "assets/images/Floating_cube_02.riv",
+          //   ),
+          // ),
           Row(
             children: [
               Padding(
                 padding: EdgeInsets.fromLTRB(
-                    size.width * 0.1, size.height * 0.25, 0, 0),
+                    size.width * 0.1, //0.1
+                    size.height * 0.25, //0.25
+                    0,
+                    0), // size.width * 0.1, size.height * 0.25, 0, 0)
                 child: Container(
-                  height: size.height * 0.45,
+                  height: size.height * 0.45, //0.45
                   child: Image.asset('assets/images/A1.png',
                       fit: BoxFit.contain, filterQuality: FilterQuality.high),
                   alignment: Alignment.center,
                 ),
               ),
             ],
+          ),
+          Positioned(
+              left: 0,
+              top: size.height * 0.3,
+              child: const FloatingCubeMini(
+                  assetLink: "assets/images/Floating_Cube_01.riv")),
+          Positioned(
+            right: size.width * 0.20, //0.42
+            bottom: size.height * 0.14,
+            child: const FloatingCubeMini(
+              assetLink: "assets/images/Floating_cube_02.riv",
+            ),
           ),
           Padding(
             padding: EdgeInsets.fromLTRB(size.width * 0.4, size.height * 0.1,
@@ -67,7 +82,7 @@ class MobileDiscoverUs extends StatelessWidget {
                   height: 20.0,
                 ),
                 Text(
-                  "Welcome to Sponsorgenix.\nComplete branding solutions & design\n services company across India.\nIt’s a creative company currently helping startups,\npersonal brands and businesses to build grow & \nmanage their online  presence.",
+                  "Welcome to Sponsorgenix.\nComplete branding solutions & \ndesign services company across India.\n It’s a creative company currently helping startups,\n personal brands and businesses to build grow & \n manage their online  presence.",
                   textAlign: TextAlign.left,
                   overflow: TextOverflow.ellipsis,
                   style: GoogleFonts.nunito(
