@@ -39,7 +39,7 @@ class _MobileHomeHeaderState extends State<MobileHomeHeader> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.height * 0.75,
+      height: size.height, //* 0.75
       width: size.width,
       decoration: const BoxDecoration(
         image: DecorationImage(

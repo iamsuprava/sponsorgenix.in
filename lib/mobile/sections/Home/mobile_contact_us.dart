@@ -20,13 +20,21 @@ class MobileContactUs extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          Positioned(
-            left: size.width * 0.16,
-            bottom: size.height * 0.10,
-            child: Container(
-              child: Image.asset('assets/images/A3.png',
-                  height: size.height * 0.8, filterQuality: FilterQuality.high),
-              alignment: Alignment.center,
+          Padding(
+            padding: EdgeInsets.fromLTRB(
+                size.width * 0.1, //0.1
+                size.height * 0.25, //0.25
+                0,
+                0),
+            child: Positioned(
+              left: size.width * 0.1, //0.16
+              bottom: size.height * 0.20, //0.10
+              child: Container(
+                child: Image.asset('assets/images/A3.png',
+                    height: size.height * 0.8,
+                    filterQuality: FilterQuality.high),
+                alignment: Alignment.center,
+              ),
             ),
           ),
           Positioned(
@@ -51,8 +59,8 @@ class MobileContactUs extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: 300,
-            bottom: 200,
+            left: size.width * 0.1, //300
+            bottom: size.height * 0.20, //200
             child: Column(
               children: [
                 Text("Contact Us",
@@ -60,7 +68,7 @@ class MobileContactUs extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     //style: TextStyle(fontWeight: FontWeight.bold),
                     style: GoogleFonts.nunito(
-                      fontSize: 28.0,
+                      fontSize: 19.0,
                       fontWeight: FontWeight.w700, //w700
                     )),
                 SizedBox(
@@ -71,7 +79,7 @@ class MobileContactUs extends StatelessWidget {
                     textAlign: TextAlign.left,
                     overflow: TextOverflow.ellipsis,
                     style: GoogleFonts.nunito(
-                      fontSize: 25.0,
+                      fontSize: 14.0,
                       fontWeight: FontWeight.w400, //w700
                     )),
                 SizedBox(

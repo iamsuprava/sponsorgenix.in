@@ -11,15 +11,26 @@ class FooterMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.height * 0.75,
-      width: size.width,
+      color: Colors.black,
+      height: size.height * 0.7,
+      width: size.width * 1,
       child: Stack(
         fit: StackFit.expand,
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("How it works ?"),
+              Text(
+                "How it works ?",
+                style: GoogleFonts.nunito(
+                  fontWeight: FontWeight.w800,
+                  color: Colors.white,
+                  fontSize: 14.0,
+                ),
+              ),
+              SizedBox(
+                height: 40.0,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -29,18 +40,22 @@ class FooterMobile extends StatelessWidget {
                     child: AnimatedPadding(
                         duration: const Duration(milliseconds: 500),
                         padding: EdgeInsets.only(
-                            left: pixels >= (size.height * 2.1) ? 100 : 0),
+                            left: pixels >= (size.height * 2.1) ? 50 : 0),
                         child: _infoPallete(context,
                             text: "Community",
                             title: "Communicate with friends",
                             icon: Icons.people_alt_rounded)),
                   ),
-                  _infoPallete(
-                    context,
-                    title: 'Overview Reports',
-                    text:
-                        'Track your progress thanks to the reporting system right inside the platform.',
-                    icon: Icons.pie_chart_rounded,
+                  Padding(
+                    padding:
+                        EdgeInsets.symmetric(horizontal: size.width * 0.05),
+                    child: _infoPallete(
+                      context,
+                      title: 'Overview Reports',
+                      text:
+                          'Track your progress thanks to the reporting system right inside the platform.',
+                      icon: Icons.pie_chart_rounded,
+                    ),
                   ),
                   _infoPallete(
                     context,
@@ -66,15 +81,15 @@ class FooterMobile extends StatelessWidget {
   }) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.height * 0.6,
-      width: size.width * 0.1,
+      height: size.height * 0.45,
+      width: size.width * 0.25,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             padding: EdgeInsets.all(6.0),
             decoration: BoxDecoration(
-              color: Colors.grey[900],
+              color: Color.fromARGB(255, 0, 0, 0),
               borderRadius: BorderRadius.circular(12.0),
             ),
             child: Icon(
@@ -90,7 +105,7 @@ class FooterMobile extends StatelessWidget {
             title,
             style: GoogleFonts.nunito(
               fontWeight: FontWeight.w800,
-              fontSize: 18.0,
+              fontSize: 14.0,
               color: Colors.white,
             ),
           ),
