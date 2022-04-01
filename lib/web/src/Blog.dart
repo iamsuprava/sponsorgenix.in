@@ -34,246 +34,229 @@ class _BlogState extends State<Blog> {
       body: Container(
         child: Stack(
           children: [
-            
-               SingleChildScrollView(
-                physics: NeverScrollableScrollPhysics(),
-                controller: controller,
-                child: Center(
-                  child: Column(
-                    children: [
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: Padding(
-                          padding:
-                              const EdgeInsets.only(top: 25.0, right: 25.0),
-                          child: GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                height = MediaQuery.of(context).size.height;
-                              });
-                              Future.delayed(Duration(milliseconds: 1000), () {
-                                Navigator.pop(context);
-                              });
-                            },
-                            child: Container(
-                                child: Icon(
-                              Icons.clear_rounded,
-                              color: Colors.white,
-                              size: 35.0,
-                            )),
-                          ),
+            SingleChildScrollView(
+              physics: NeverScrollableScrollPhysics(),
+              controller: controller,
+              child: Center(
+                child: Column(
+                  children: [
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 25.0, right: 25.0),
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              height = MediaQuery.of(context).size.height;
+                            });
+                            Future.delayed(Duration(milliseconds: 1000), () {
+                              Navigator.pop(context);
+                            });
+                          },
+                          child: Container(
+                              child: Icon(
+                            Icons.clear_rounded,
+                            color: Colors.white,
+                            size: 35.0,
+                          )),
                         ),
                       ),
-                      SizedBox(
-                        height: 43.0,
-                      ),
-                      Text(
-                        "Check out my latest blog posts",
-                        style: GoogleFonts.poppins(
-                            fontSize: 15.0,
-                            color: Colors.white70,
-                            fontWeight: FontWeight.w400),
-                      ),
-                      SizedBox(
-                        height: 8.0,
-                      ),
-                      Text(
-                        "My Blog",
-                        style: GoogleFonts.poppins(
-                            fontSize: 46.0,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.white),
-                      ),
-                      SizedBox(
-                        height: 112.0,
-                      ),
-                      Center(
-                        child: Container(
-                          width: MediaQuery.of(context).size.width > 1300
-                              ? MediaQuery.of(context).size.width * 0.65
-                              : MediaQuery.of(context).size.width > 1200
-                                  ? MediaQuery.of(context).size.width * 0.75
-                                  : MediaQuery.of(context).size.width * 0.85,
-                          child: BootstrapRow(
-                            height: 361,
-                            children: [
-                              BootstrapCol(
-                                fit: FlexFit.tight,
-                                sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
-                                child: Container(
-                                  width: 370.0,
-                                  child: BlogCard(
-                                      image: "",
-                                      head: "Take a tourof my office",
-                                      sub:
-                                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas"),
-                                ),
+                    ),
+                    SizedBox(
+                      height: 43.0,
+                    ),
+                    Text(
+                      "Check out my latest blog posts",
+                      style: GoogleFonts.poppins(
+                          fontSize: 15.0,
+                          color: Colors.white70,
+                          fontWeight: FontWeight.w400),
+                    ),
+                    SizedBox(
+                      height: 8.0,
+                    ),
+                    Text(
+                      "My Blog",
+                      style: GoogleFonts.poppins(
+                          fontSize: 46.0,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white),
+                    ),
+                    SizedBox(
+                      height: 112.0,
+                    ),
+                    Center(
+                      child: Container(
+                        width: MediaQuery.of(context).size.width > 1300
+                            ? MediaQuery.of(context).size.width * 0.65
+                            : MediaQuery.of(context).size.width > 1200
+                                ? MediaQuery.of(context).size.width * 0.75
+                                : MediaQuery.of(context).size.width * 0.85,
+                        child: BootstrapRow(
+                          height: 361,
+                          children: [
+                            BootstrapCol(
+                              fit: FlexFit.tight,
+                              sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
+                              child: Container(
+                                width: 370.0,
+                                child: BlogCard(
+                                    image: "",
+                                    head: "Take a tourof my office",
+                                    sub: "Coming Soon"),
                               ),
-                              BootstrapCol(
-                                fit: FlexFit.tight,
-                                sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
-                                child: Container(
-                                  width: 370.0,
-                                  child: BlogCard(
-                                      image: "",
-                                      head: "Take a tourof my office",
-                                      sub:
-                                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas"),
-                                ),
+                            ),
+                            BootstrapCol(
+                              fit: FlexFit.tight,
+                              sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
+                              child: Container(
+                                width: 370.0,
+                                child: BlogCard(
+                                    image: "",
+                                    head: "Take a tourof my office",
+                                    sub: "Coming Soon.."),
                               ),
-                              BootstrapCol(
-                                fit: FlexFit.tight,
-                                sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
-                                child: Container(
-                                  width: 370.0,
-                                  child: BlogCard(
-                                      image: "",
-                                      head: "Take a tourof my office",
-                                      sub:
-                                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas"),
-                                ),
+                            ),
+                            BootstrapCol(
+                              fit: FlexFit.tight,
+                              sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
+                              child: Container(
+                                width: 370.0,
+                                child: BlogCard(
+                                    image: "",
+                                    head: "Take a tourof my office",
+                                    sub: "Coming Soon.."),
                               ),
-                              BootstrapCol(
-                                fit: FlexFit.tight,
-                                sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
-                                child: Container(
-                                  width: 370.0,
-                                  child: BlogCard(
-                                      image: "",
-                                      head: "Take a tourof my office",
-                                      sub:
-                                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas"),
-                                ),
+                            ),
+                            BootstrapCol(
+                              fit: FlexFit.tight,
+                              sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
+                              child: Container(
+                                width: 370.0,
+                                child: BlogCard(
+                                    image: "",
+                                    head: "Take a tourof my office",
+                                    sub: "Coming Soon..."),
                               ),
-                              BootstrapCol(
-                                fit: FlexFit.tight,
-                                sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
-                                child: Container(
-                                  width: 370.0,
-                                  child: BlogCard(
-                                      image: "",
-                                      head: "Take a tourof my office",
-                                      sub:
-                                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas"),
-                                ),
+                            ),
+                            BootstrapCol(
+                              fit: FlexFit.tight,
+                              sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
+                              child: Container(
+                                width: 370.0,
+                                child: BlogCard(
+                                    image: "",
+                                    head: "Take a tourof my office",
+                                    sub: "Coming Soon..."),
                               ),
-                              BootstrapCol(
-                                fit: FlexFit.tight,
-                                sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
-                                child: Container(
-                                  width: 370.0,
-                                  child: BlogCard(
-                                      image: "",
-                                      head: "Take a tourof my office",
-                                      sub:
-                                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas"),
-                                ),
+                            ),
+                            BootstrapCol(
+                              fit: FlexFit.tight,
+                              sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
+                              child: Container(
+                                width: 370.0,
+                                child: BlogCard(
+                                    image: "",
+                                    head: "Take a tourof my office",
+                                    sub: "Coming Soon.."),
                               ),
-                              BootstrapCol(
-                                fit: FlexFit.tight,
-                                sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
-                                child: Container(
-                                  width: 370.0,
-                                  child: BlogCard(
-                                      image: "",
-                                      head: "Take a tourof my office",
-                                      sub:
-                                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas"),
-                                ),
+                            ),
+                            BootstrapCol(
+                              fit: FlexFit.tight,
+                              sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
+                              child: Container(
+                                width: 370.0,
+                                child: BlogCard(
+                                    image: "",
+                                    head: "Take a tourof my office",
+                                    sub: "Coming Soon.."),
                               ),
-                              BootstrapCol(
-                                fit: FlexFit.tight,
-                                sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
-                                child: Container(
-                                  width: 370.0,
-                                  child: BlogCard(
-                                      image: "",
-                                      head: "Take a tourof my office",
-                                      sub:
-                                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas"),
-                                ),
+                            ),
+                            BootstrapCol(
+                              fit: FlexFit.tight,
+                              sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
+                              child: Container(
+                                width: 370.0,
+                                child: BlogCard(
+                                    image: "",
+                                    head: "Take a tourof my office",
+                                    sub: "Coming Soon.."),
                               ),
-                              BootstrapCol(
-                                fit: FlexFit.tight,
-                                sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
-                                child: Container(
-                                  width: 370.0,
-                                  child: BlogCard(
-                                      image: "",
-                                      head: "Take a tourof my office",
-                                      sub:
-                                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas"),
-                                ),
+                            ),
+                            BootstrapCol(
+                              fit: FlexFit.tight,
+                              sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
+                              child: Container(
+                                width: 370.0,
+                                child: BlogCard(
+                                    image: "",
+                                    head: "Take a tourof my office",
+                                    sub: "Coming Soon.."),
                               ),
-                              BootstrapCol(
-                                fit: FlexFit.tight,
-                                sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
-                                child: Container(
-                                  width: 370.0,
-                                  child: BlogCard(
-                                      image: "",
-                                      head: "Take a tourof my office",
-                                      sub:
-                                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas"),
-                                ),
+                            ),
+                            BootstrapCol(
+                              fit: FlexFit.tight,
+                              sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
+                              child: Container(
+                                width: 370.0,
+                                child: BlogCard(
+                                    image: "",
+                                    head: "Take a tourof my office",
+                                    sub: "Coming Soon.."),
                               ),
-                              BootstrapCol(
-                                fit: FlexFit.tight,
-                                sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
-                                child: Container(
-                                  width: 370.0,
-                                  child: BlogCard(
-                                      image: "",
-                                      head: "Take a tourof my office",
-                                      sub:
-                                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas"),
-                                ),
+                            ),
+                            BootstrapCol(
+                              fit: FlexFit.tight,
+                              sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
+                              child: Container(
+                                width: 370.0,
+                                child: BlogCard(
+                                    image: "",
+                                    head: "Take a tourof my office",
+                                    sub: "Coming Soon.."),
                               ),
-                              BootstrapCol(
-                                fit: FlexFit.tight,
-                                sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
-                                child: Container(
-                                  width: 370.0,
-                                  child: BlogCard(
-                                      image: "",
-                                      head: "Take a tourof my office",
-                                      sub:
-                                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas"),
-                                ),
+                            ),
+                            BootstrapCol(
+                              fit: FlexFit.tight,
+                              sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
+                              child: Container(
+                                width: 370.0,
+                                child: BlogCard(
+                                    image: "",
+                                    head: "Take a tourof my office",
+                                    sub: "Coming Soon.."),
                               ),
-                              BootstrapCol(
-                                fit: FlexFit.tight,
-                                sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
-                                child: Container(
-                                  width: 370.0,
-                                  child: BlogCard(
-                                      image: "",
-                                      head: "Take a tourof my office",
-                                      sub:
-                                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas"),
-                                ),
+                            ),
+                            BootstrapCol(
+                              fit: FlexFit.tight,
+                              sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
+                              child: Container(
+                                width: 370.0,
+                                child: BlogCard(
+                                    image: "",
+                                    head: "Take a tourof my office",
+                                    sub: "Coming Soon.."),
                               ),
-                              BootstrapCol(
-                                fit: FlexFit.tight,
-                                sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
-                                child: Container(
-                                  width: 370.0,
-                                  child: BlogCard(
-                                      image: "",
-                                      head: "Take a tourof my office",
-                                      sub:
-                                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo quam, eum alias id, repellendus magni, quas"),
-                                ),
+                            ),
+                            BootstrapCol(
+                              fit: FlexFit.tight,
+                              sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
+                              child: Container(
+                                width: 370.0,
+                                child: BlogCard(
+                                    image: "",
+                                    head: "Take a tourof my office",
+                                    sub: "Coming Soon.."),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                      )
-                    ],
-                  ),
+                      ),
+                    )
+                  ],
                 ),
               ),
-            
+            ),
             Container(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,

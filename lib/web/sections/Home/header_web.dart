@@ -6,8 +6,11 @@ import 'package:sponsorgenix/constants.dart';
 import 'package:sponsorgenix/web/widgets/social_buttons_web.dart';
 
 class HeaderSectionWeb extends StatefulWidget {
+  final double pixels;
   final Widget down_key;
-  const HeaderSectionWeb({Key? key, required this.down_key}) : super(key: key);
+  const HeaderSectionWeb(
+      {Key? key, required this.down_key, required this.pixels})
+      : super(key: key);
 
   @override
   State<HeaderSectionWeb> createState() => _HeaderSectionWebState();
@@ -173,7 +176,9 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb> {
           Positioned(
             left: size.width / 2,
             bottom: 0,
-            child: widget.down_key,
+            child: Visibility(
+                visible: widget.pixels >= size.height * 0.65 ? false : true,
+                child: widget.down_key),
           ),
         ],
       ),

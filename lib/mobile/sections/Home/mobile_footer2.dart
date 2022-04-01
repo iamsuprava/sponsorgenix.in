@@ -14,6 +14,7 @@ class MobileFooter2 extends StatefulWidget {
 class _HomeFooter3State extends State<MobileFooter2> {
   @override
   Widget build(BuildContext context) {
+    //check this out
     Size size = MediaQuery.of(context).size;
     return Container(
       color: Colors.black,
@@ -42,12 +43,12 @@ class _HomeFooter3State extends State<MobileFooter2> {
                   height: 50.0,
                 ),
                 AnimatedAlign(
-                  alignment: widget.pixels >= size.height * 4.5
+                  alignment: widget.pixels >= size.height * 2.5
                       ? const Alignment(0.0, 0.0)
                       : const Alignment(-0.2, 0.0),
                   duration: Duration(milliseconds: 500),
                   child: AnimatedOpacity(
-                    opacity: widget.pixels >= size.height * 4.5 ? 1.0 : 0.0,
+                    opacity: widget.pixels >= size.height * 2.5 ? 1.0 : 0.0,
                     duration: Duration(milliseconds: 500),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,

@@ -6,13 +6,13 @@ import 'package:sponsorgenix/web/widgets/floating_cubes.dart';
 import '../../src/About.dart';
 
 class HomeDiscoverUsWeb extends StatelessWidget {
-  const HomeDiscoverUsWeb({Key? key}) : super(key: key);
+  final double pixels;
+  const HomeDiscoverUsWeb({Key? key, required this.pixels}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      
       height: size.height,
       width: size.width,
       decoration: const BoxDecoration(
@@ -28,10 +28,15 @@ class HomeDiscoverUsWeb extends StatelessWidget {
           Positioned(
             left: size.width * 0.15,
             bottom: 0,
-            child: Container(
-              child: Image.asset('assets/images/A1.png',
-                  height: size.height * 0.9, filterQuality: FilterQuality.high),
-              alignment: Alignment.center,
+            child: AnimatedOpacity(
+              duration: const Duration(milliseconds: 900),
+              opacity: pixels >= size.height * 0.59 ? 1.0 : 0.0,
+              child: Container(
+                child: Image.asset('assets/images/A1.png',
+                    height: size.height * 0.9,
+                    filterQuality: FilterQuality.high),
+                alignment: Alignment.center,
+              ),
             ),
           ),
           Positioned(
@@ -46,37 +51,42 @@ class HomeDiscoverUsWeb extends StatelessWidget {
               assetLink: "assets/images/Floating_cube_02.riv",
             ),
           ),
-          Positioned(
-            left: 800.0,
-            bottom: 200,
-            child: Column(
-              children: [
-                Text(
-                  "Discover Us",
-                  textAlign: TextAlign.left,
-                  overflow: TextOverflow.ellipsis,
-                  style: GoogleFonts.nunito(
-                    fontSize: 28.0,
-                    fontWeight: FontWeight.w700, //w700
-                  ),
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                Text(
-                    "Welcome to Sponsorgenix.\nComplete branding solutions & design\n services company across India.\nIt’s a creative company currently helping startups,\npersonal brands and businesses to build grow & \nmanage their online  presence.",
+          AnimatedPositioned(
+            duration: const Duration(milliseconds: 900),
+            right: pixels >= size.height * 0.59 ? size.width * 0.05 : -600,
+            bottom: size.height * 0.3,
+            child: AnimatedOpacity(
+              duration: const Duration(milliseconds: 900),
+              opacity: pixels >= size.height * 0.59 ? 1 : 0,
+              child: Column(
+                children: [
+                  Text(
+                    "Discover Us",
                     textAlign: TextAlign.left,
                     overflow: TextOverflow.ellipsis,
-                    //style: TextStyle(fontWeight: FontWeight.bold),
                     style: GoogleFonts.nunito(
-                      fontSize: 25.0,
-                      fontWeight: FontWeight.w400, //w700
-                    )),
-                SizedBox(
-                  height: 30.0,
-                ),
-                AnimatedLottieButton(),
-              ],
+                      fontSize: 28.0,
+                      fontWeight: FontWeight.w700, //w700
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Text(
+                      "Welcome to Sponsorgenix.\nComplete branding solutions & design\n services company across India.\nIt’s a creative company currently helping startups,\npersonal brands and businesses to build grow & \nmanage their online  presence.",
+                      textAlign: TextAlign.left,
+                      overflow: TextOverflow.ellipsis,
+                      //style: TextStyle(fontWeight: FontWeight.bold),
+                      style: GoogleFonts.nunito(
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.w400, //w700
+                      )),
+                  SizedBox(
+                    height: 30.0,
+                  ),
+                  AnimatedLottieButton(),
+                ],
+              ),
             ),
           ),
         ],

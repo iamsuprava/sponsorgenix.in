@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -158,17 +157,17 @@ class _WebLandingPageState extends State<WebLandingPage> {
             ),
           ),
         ),
-        preferredSize: Size(size.width, size.height * 0.3),
+        preferredSize: Size(size.width, size.height * 0.25),
       ),
       extendBodyBehindAppBar: true,
       body: Stack(
         children: [
           SingleChildScrollView(
             controller: _scrollController,
-            physics: BouncingScrollPhysics(),
             child: Column(
               children: [
                 HeaderSectionWeb(
+                  pixels: pixels,
                   down_key: IconButton(
                     icon: LottieBuilder.network(
                       "https://assets3.lottiefiles.com/packages/lf20_kxjicwsk.json",
@@ -177,22 +176,17 @@ class _WebLandingPageState extends State<WebLandingPage> {
                     onPressed: () {},
                     // onPressed: () => _homeDiscoverUsKey,
                   ),
-                  // down_key: Container(
-                  //   height: 40,
-                  //   width: 40,
-                  //   child: LottieBuilder.network(
-                  //     "https://assets3.lottiefiles.com/packages/lf20_kxjicwsk.json",
-                  //     fit: BoxFit.contain,
-                  //   ),
-                  // ),
                 ),
                 HomeDiscoverUsWeb(
+                  pixels: pixels,
                   key: _homeDiscoverUsKey,
                 ),
                 HomeServicesWeb(
+                  pixels: pixels,
                   key: _homeServicesKey,
                 ),
                 HomeContactUsWeb(
+                  pixels: pixels,
                   key: _homeContactUsKey,
                 ),
                 HomeFooter(pixels: pixels),

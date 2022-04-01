@@ -184,11 +184,11 @@ class _AboutState extends State<About> {
                                             ? Row(
                                                 children: [
                                                   Cvcard(
-                                                    text1: "Cofounders : ",
+                                                    text1: "Co-founders : ",
                                                     text2:
-                                                        "Suprava Saha, Sagnik Sarnal",
+                                                        "Suprava Saha, Sagnik Sanyal",
                                                   ),
-                                                  Spacer(),
+                                                  const Spacer(),
                                                   Cvcard(
                                                     text1: "Mail : ",
                                                     text2:
@@ -214,10 +214,6 @@ class _AboutState extends State<About> {
                                   child: MediaQuery.of(context).size.width > 800
                                       ? Row(
                                           children: [
-                                            // Cvcard(
-                                            //   text1: "Age : ",
-                                            //   text2: "21",
-                                            // ),
                                             Spacer(),
                                             Cvcard(
                                               text1: "From : ",
@@ -234,7 +230,7 @@ class _AboutState extends State<About> {
                                             Spacer(),
                                             Cvcard(
                                               text1: "From : ",
-                                              text2: "LiverPark,UK",
+                                              text2: "Bnaglore,IN",
                                             ),
                                           ],
                                         ),
@@ -359,8 +355,7 @@ class _AboutState extends State<About> {
                           child: ServiceCard(
                             icon: Icons.sanitizer_rounded,
                             head: "Design Trends",
-                            sub:
-                                "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+                            sub: "Details coming soon..",
                           ),
                         ),
                         BootstrapCol(
@@ -368,17 +363,15 @@ class _AboutState extends State<About> {
                           child: ServiceCard(
                             icon: Icons.book_rounded,
                             head: "PSD Design",
-                            sub:
-                                "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+                            sub: "Details coming soon..",
                           ),
                         ),
                         BootstrapCol(
-                          sizes: 'col-sm-12 col-md-12 col-lg-6',
+                          sizes: 'Alpha',
                           child: ServiceCard(
                             icon: Icons.thumbs_up_down_rounded,
                             head: "Customer Support",
-                            sub:
-                                "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+                            sub: "Details coming soon..",
                           ),
                         ),
                         BootstrapCol(
@@ -386,8 +379,7 @@ class _AboutState extends State<About> {
                           child: ServiceCard(
                             icon: Icons.laptop_chromebook_rounded,
                             head: "Web Development",
-                            sub:
-                                "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+                            sub: "Details coming soon..",
                           ),
                         ),
                         BootstrapCol(
@@ -395,8 +387,7 @@ class _AboutState extends State<About> {
                           child: ServiceCard(
                             icon: Icons.facebook_rounded,
                             head: "Fully Responsive",
-                            sub:
-                                "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+                            sub: "Details coming soon..",
                           ),
                         ),
                         BootstrapCol(
@@ -404,8 +395,7 @@ class _AboutState extends State<About> {
                           child: ServiceCard(
                             icon: Icons.pie_chart_outline_rounded,
                             head: "Branding",
-                            sub:
-                                "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+                            sub: "Details coming soon..",
                           ),
                         ),
                       ]),

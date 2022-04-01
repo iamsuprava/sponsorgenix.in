@@ -23,6 +23,9 @@ class _HomeFooterState extends State<HomeFooter> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text("How it works ?"),
+              SizedBox(
+                height: 40,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [

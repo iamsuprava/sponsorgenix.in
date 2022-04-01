@@ -43,14 +43,14 @@ class _HomeFooter2State extends State<HomeFooter2> {
                   Row(
                     children: [
                       AnimatedPadding(
-                        duration: const Duration(milliseconds: 500),
+                        duration: const Duration(milliseconds: 700),
                         padding: EdgeInsets.only(
                             left:
                                 widget.pixels >= (size.height * 3.83) ? 40 : 0),
                         child: AnimatedOpacity(
                           opacity:
                               widget.pixels >= (size.height * 3.83) ? 1.0 : 0,
-                          duration: const Duration(milliseconds: 500),
+                          duration: const Duration(milliseconds: 700),
                           child: Container(
                             height: size.height * 0.5,
                             width: size.width * 0.6,
