@@ -24,12 +24,16 @@ class MobileServices extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           Positioned(
-            left: 50,
-            top: 50,
+            //left: 50,
+            right: 0,
+            top: size.height * 0.1,
             child: Container(
+              height: size.height * 0.8,
+              width: size.width,
               child: Image.asset('assets/images/A2.png',
-                  height: size.height,
-                  width: size.width,
+                  // height: size.height,
+                  // width: size.width,
+                  fit: BoxFit.contain,
                   filterQuality: FilterQuality.high),
               alignment: Alignment.center,
             ),

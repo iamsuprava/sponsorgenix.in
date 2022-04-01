@@ -55,7 +55,7 @@ class _HomeFooter2State extends State<HomeFooter2> {
                             height: size.height * 0.5,
                             width: size.width * 0.6,
                             decoration: BoxDecoration(
-                              color: Colors.red,
+                              color: Colors.black,
                               borderRadius: BorderRadius.circular(20.0),
                             ),
                             clipBehavior: Clip.antiAliasWithSaveLayer,
