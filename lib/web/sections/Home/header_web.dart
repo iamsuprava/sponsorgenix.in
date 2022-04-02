@@ -53,6 +53,10 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb> {
       decoration: const BoxDecoration(
         image: DecorationImage(
             image: AssetImage("assets/images/SX.gif"),
+            // image: NetworkImage(
+            //     "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fview&psig=AOvVaw0vcqLUwaGPlD-y6xfGjCWY&ust=1648927810487000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNDCrvbM8_YCFQAAAAAdAAAAABAD"),
+            // image: NetworkImage(
+            //     'https://docs.flutter.dev/assets/images/dash/dash-fainting.gif'),
             filterQuality: FilterQuality.high,
             fit: BoxFit.cover),
       ),

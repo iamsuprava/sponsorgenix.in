@@ -340,11 +340,11 @@ class _ContactInfoState extends State<ContactInfo> {
                 sub: "28,1st main 1st cross bhumikalayout,Bangalore, India.",
                 icon: Icons.location_on),
             ContactCard(
-                head: "Call Me",
-                sub: "+44 1632 967704",
+                head: "Call ",
+                sub: "+91 8392068384",
                 icon: Icons.phone_outlined),
             ContactCard(
-              head: "Email Me",
+              head: "Email ",
               sub: "contact@sponsorgenix.com",
               icon: Icons.send_outlined,
             ),

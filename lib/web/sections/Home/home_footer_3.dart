@@ -41,13 +41,13 @@ class _HomeFooter3State extends State<HomeFooter3> {
                   height: 100.0,
                 ),
                 AnimatedAlign(
-                  alignment: widget.pixels >= size.height * 4.5
+                  alignment: widget.pixels >= size.height * 4.9
                       ? const Alignment(0.0, 0.0)
                       : const Alignment(-0.2, 0.0),
-                  duration: Duration(milliseconds: 500),
+                  duration: Duration(milliseconds: 900),
                   child: AnimatedOpacity(
-                    opacity: widget.pixels >= size.height * 4.5 ? 1.0 : 0.0,
-                    duration: Duration(milliseconds: 500),
+                    opacity: widget.pixels >= size.height * 4.9 ? 1.0 : 0.0,
+                    duration: Duration(milliseconds: 900),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -112,21 +112,21 @@ class _HomeFooter3State extends State<HomeFooter3> {
             image:
                 'https://images.unsplash.com/photo-1565623006066-82f23c79210b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80',
             left: 780.0,
-            top: widget.pixels >= size.height * 4.5 ? 100.0 : 130.0,
+            top: widget.pixels >= size.height * 4.9 ? 100.0 : 130.0,
             leftalign: false,
           ),
           TestimonialTile(
             image:
                 'https://images.unsplash.com/photo-1612282131293-37332d3cea00?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1995&q=80',
             left: 840.0,
-            top: widget.pixels >= size.height * 4.5 ? 400.0 : 430.0,
+            top: widget.pixels >= size.height * 4.9 ? 400.0 : 430.0,
             leftalign: false,
           ),
           TestimonialTile(
             image:
                 'https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1950&q=80',
             left: 440.0,
-            top: widget.pixels >= size.height * 4.5 ? 450.0 : 480.0,
+            top: widget.pixels >= size.height * 4.9 ? 450.0 : 480.0,
             leftalign: true,
           ),
         ],

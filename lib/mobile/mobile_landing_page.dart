@@ -64,7 +64,7 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
               MobileHomeHeader(),
               MobileDiscoverUs(),
               MobileServices(),
-              MobileContactUs(),
+              // MobileContactUs(),
               FooterMobile(
                 pixels: pixels,
               ),

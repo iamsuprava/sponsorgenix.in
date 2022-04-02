@@ -62,4 +62,3 @@ Widget mobileView() {
 Widget desktopView() {
   return WebLandingPage();
 }
-

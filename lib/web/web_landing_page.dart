@@ -279,41 +279,6 @@ class _WebLandingPageState extends State<WebLandingPage> {
           ],
         ),
       );
-  // reachUs() async {
-  //   var contact = "+918392068384";
-  //   var android_url = "whatsapp://send?phone=" + contact + "&text= Hi";
-  //   var IOS_url = "https://wa.me/$contact?text=${Uri.parse("Hi")}";
-  //   if (Platform.isIOS) {
-  //     if (await canLaunch(IOS_url)) {
-  //       await launch(IOS_url, forceSafariVC: false);
-  //     } else {
-  //       print("Whatsapp is not installed");
-  //     }
-  //   }
-  // }
-  // openwhatsapp() async {
-  //   var whatsapp = "+91 8392068384";
-  //   var whatsappURL_android =
-  //       "https://api.whatsapp.com/send/?phone=918392068384&text&app_absent=0"; //whatsapp://send?phone=" + whatsapp + "&text= Hi
-  //   var whatsappURL_ios = "https://wa.me/$whatsapp?text+${Uri.parse("hello")}";
-  //   if (Platform.isIOS) {
-  //     //for ios phone only
-  //     if (await canLaunch(whatsappURL_ios)) {
-  //       await launch(whatsappURL_ios, forceSafariVC: false);
-  //     } else {
-  //       ScaffoldMessenger.of(context)
-  //           .showSnackBar(SnackBar(content: new Text("whatsapp no installed")));
-  //     }
-  //   } else {
-  //     //android,web
-  //     if (await canLaunch(whatsappURL_android)) {
-  //       await launch(whatsappURL_android);
-  //     } else {
-  //       ScaffoldMessenger.of(context)
-  //           .showSnackBar(SnackBar(content: new Text("whatsapp no installed")));
-  //     }
-  //   }
-  // }
 }
 //https://api.whatsapp.com/send/?phone=918392068384&text&app_absent=0
 

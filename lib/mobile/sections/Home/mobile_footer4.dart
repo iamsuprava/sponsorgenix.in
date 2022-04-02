@@ -17,7 +17,7 @@ class _HomeFooter4State extends State<MobileFooter4> {
     return Container(
         height: size.height / 3,
         width: size.width,
-        color: Color.fromARGB(255, 23, 28, 105), //0xff373e98
+        color: Color.fromARGB(255, 1, 7, 94), //0xff373e98
         child: Stack(
           children: [
             Center(

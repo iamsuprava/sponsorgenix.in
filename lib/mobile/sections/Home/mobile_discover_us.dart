@@ -23,9 +23,19 @@ class MobileDiscoverUs extends StatelessWidget {
       child: Stack(
         fit: StackFit.expand,
         children: [
-          Padding(
-              padding: EdgeInsets.fromLTRB(
-                  size.width * 0.01, size.height * 0.3, size.width * 0.7, 0),
+          Positioned(
+            left: 0,
+            bottom: 0,
+            child: Image.asset('assets/images/A1.png',
+                fit: BoxFit.contain,
+                scale: 2,
+                filterQuality: FilterQuality.high),
+          ),
+          Positioned(
+              left: 0,
+              top: 80,
+              // padding: EdgeInsets.fromLTRB(
+              //     size.width * 0.01, size.height * 0.3, size.width * 0.7, 0),
               child: const FloatingCubeMini(
                   assetLink: "assets/images/Floating_Cube_01.riv")),
           Padding(
@@ -35,30 +45,6 @@ class MobileDiscoverUs extends StatelessWidget {
               assetLink: "assets/images/Floating_cube_02.riv",
             ),
           ),
-          Positioned(
-            left: 0,
-            bottom: 0,
-            child: Container(
-              height: size.height * 0.4,
-              width: size.width * 0.45, //0.45
-              child: Image.asset('assets/images/A1.png',
-                  fit: BoxFit.contain, filterQuality: FilterQuality.high),
-              alignment: Alignment.center,
-            ),
-          ),
-
-          // Positioned(
-          //     left: 0,
-          //     top: size.height * 0.3,
-          //     child: const FloatingCubeMini(
-          //         assetLink: "assets/images/Floating_Cube_01.riv")),
-          // Positioned(
-          //   right: size.width * 0.20, //0.42
-          //   bottom: size.height * 0.14,
-          //   child: const FloatingCubeMini(
-          //     assetLink: "assets/images/Floating_cube_02.riv",
-          //   ),
-          // ),
           Positioned(
             right: size.width * 0.07,
             top: size.height * 0.15,
