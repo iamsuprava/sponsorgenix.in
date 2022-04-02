@@ -108,7 +108,7 @@ class _AboutUsMobileState extends State<AboutUsMobile> {
                     BootstrapCol(
                       sizes: 'col-md-12 col-lg-8 col-sm-12',
                       child: Container(
-                        height: 570.0,
+                        height: 692.0, //570.0
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [

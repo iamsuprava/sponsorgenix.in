@@ -35,7 +35,6 @@ class _BlogState extends State<Blog> {
         child: Stack(
           children: [
             SingleChildScrollView(
-              physics: NeverScrollableScrollPhysics(),
               controller: controller,
               child: Center(
                 child: Column(
@@ -66,7 +65,7 @@ class _BlogState extends State<Blog> {
                       height: 43.0,
                     ),
                     Text(
-                      "Check out my latest blog posts",
+                      "Check out our latest blog posts",
                       style: GoogleFonts.poppins(
                           fontSize: 15.0,
                           color: Colors.white70,
@@ -76,7 +75,7 @@ class _BlogState extends State<Blog> {
                       height: 8.0,
                     ),
                     Text(
-                      "My Blog",
+                      "Our Blog",
                       style: GoogleFonts.poppins(
                           fontSize: 46.0,
                           fontWeight: FontWeight.w700,
