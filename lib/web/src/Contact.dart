@@ -274,6 +274,7 @@ class _MessageMeState extends State<MessageMe> {
   Future openDialog() => showDialog(
         context: context,
         builder: (context) => AlertDialog(
+          backgroundColor: Color.fromARGB(255, 10, 238, 230),
           title: Text("Google Form"),
           // content: TextField(
           //   decoration: InputDecoration(hintText: "Enter your Name"),
