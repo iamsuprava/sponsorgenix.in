@@ -108,7 +108,7 @@ class Footer extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 4.0),
                     child: Text(
-                      'Tariffs',
+                      '',
                       style: GoogleFonts.nunito(
                         color: Colors.black54,
                         fontWeight: FontWeight.w500,

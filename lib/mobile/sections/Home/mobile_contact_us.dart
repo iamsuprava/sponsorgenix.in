@@ -19,13 +19,16 @@ class MobileContactUs extends StatelessWidget {
             fit: BoxFit.cover),
       ),
       child: Stack(
+        fit: StackFit.expand,
         children: [
           Padding(
             padding: EdgeInsets.fromLTRB(
                 size.width * 0.1, //0.1
-                size.height * 0.25, //0.25
+                size.height * 0.25,
                 0,
-                0),
+                0 //0.25
+
+                ),
             child: Positioned(
               left: size.width * 0.1, //0.16
               bottom: size.height * 0.20, //0.10
