@@ -4,7 +4,6 @@ import 'package:lottie/lottie.dart';
 
 import 'package:sponsorgenix/constants.dart';
 import 'package:sponsorgenix/web/widgets/social_buttons_web.dart';
-import 'package:video_player/video_player.dart';
 
 class HeaderSectionWeb extends StatefulWidget {
   final double pixels;
@@ -51,6 +50,16 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb> {
     return Container(
       height: size.height,
       width: size.width,
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+            image: AssetImage("assets/images/SX.gif"),
+            // image: NetworkImage(
+            //     "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fview&psig=AOvVaw0vcqLUwaGPlD-y6xfGjCWY&ust=1648927810487000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNDCrvbM8_YCFQAAAAAdAAAAABAD"),
+            // image: NetworkImage(
+            //     'https://docs.flutter.dev/assets/images/dash/dash-fainting.gif'),
+            filterQuality: FilterQuality.high,
+            fit: BoxFit.cover),
+      ),
       child: Stack(
         alignment: Alignment.topCenter,
         children: [
@@ -131,7 +140,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb> {
                       child: Image.asset("assets/images/Twitter_3d.png")),
                   Spacer(),
                   SocialButtons(
-                    url: "https://www.instagram.com/sponsorgenix",
+                    url: "https://www.linkedin.com/company/sponsorgenix/",
                     child: Image.asset(
                       "assets/images/LinkedIn_3d.png",
                     ),
@@ -140,6 +149,34 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb> {
               ),
             ),
           ),
+          // Padding(
+          //   padding: EdgeInsets.fromLTRB(size.width * 0.03, size.height * 0.5,
+          //       size.width * 0.4, size.height * 0.2),
+          //   child: RotatedBox(
+          //     quarterTurns: 1,
+          //     child: Row(
+          //       children: [
+          //         Text(
+          //           "sponsorgenix@gmail.com",
+          //           style: GoogleFonts.poppins(
+          //               fontSize: 16.0,
+          //               fontWeight: FontWeight.w400,
+          //               color: Colors.white),
+          //         ),
+          //         SizedBox(
+          //           height: size.height * 0.05,
+          //         ),
+          //         Text(
+          //           " | 2022",
+          //           style: GoogleFonts.poppins(
+          //               fontSize: 16.0,
+          //               fontWeight: FontWeight.w400,
+          //               color: Colors.white),
+          //         ),
+          //       ],
+          //     ),
+          //   ),
+          // ),
           Positioned(
             left: size.width / 2,
             bottom: 0,
@@ -153,3 +190,105 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb> {
   }
 }
 
+// Column(
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         crossAxisAlignment: CrossAxisAlignment.center,
+//         children: [
+//           SizedBox(
+//             height: size.height * 0.12,
+//           ),
+//           Image.asset(
+//             "assets/images/Logo.png",
+//             filterQuality: FilterQuality.high,
+//             height: size.height * 0.4,
+//             width: size.width * 0.6,
+//           ),
+//           SizedBox(
+//             height: 30,
+//           ),
+//           Column(
+//             crossAxisAlignment: CrossAxisAlignment.center,
+//             children: [
+//               Container(
+//                 child: Row(
+//                   mainAxisAlignment: MainAxisAlignment.center,
+//                   children: [
+//                     Text(
+//                       "Helping ",
+//                       style: GoogleFonts.poppins(
+//                           fontSize: 31.0,
+//                           fontWeight: FontWeight.w500,
+//                           color: Colors.white),
+//                     ),
+//                     AnimatedContainer(
+//                       duration: Duration(milliseconds: 1000),
+//                       curve: Curves.easeInOut,
+//                       width: width,
+//                       onEnd: () {
+//                         if (i == 3) i = 0;
+//                         if (width == 0) {
+//                           name = text[i++];
+//                         }
+//                         Future.delayed(Duration(milliseconds: 200), () {
+//                           setState(() {
+//                             width == 180 ? width = 0 : width = 180;
+//                           });
+//                         });
+//                       },
+//                       child: Text(
+//                         name,
+//                         softWrap: false,
+//                         style: GoogleFonts.poppins(
+//                             fontSize: 31.0,
+//                             fontWeight: FontWeight.w500,
+//                             color: Colors.white),
+//                       ),
+//                     ),
+//                     Container(
+//                       height: 29.0,
+//                       width: 2.0,
+//                       color: Colors.white,
+//                     )
+//                   ],
+//                 ),
+//               )
+//             ],
+//           ),
+//           Padding(
+//             padding: EdgeInsets.only(bottom: 25.0),
+//             child: Row(
+//               crossAxisAlignment: CrossAxisAlignment.end,
+//               children: [
+//                 Padding(
+//                   padding: EdgeInsets.only(left: 25.0),
+                  // child: 
+//                 ),
+//                 Spacer(),
+//                 Padding(
+//                   padding: const EdgeInsets.only(right: 25.0),
+//                   child: Column(
+//                     children: [
+//                       SocialButtons(
+//                         child: Image.asset("assets/images/Instagram_3d.png"),
+//                       ),
+//                       SizedBox(
+//                         height: 10,
+//                       ),
+//                       SocialButtons(
+//                           child: Image.asset("assets/images/Twitter_3d.png")),
+//                       SizedBox(
+//                         height: 10,
+//                       ),
+//                       SocialButtons(
+//                           child: Image.asset("assets/images/LinkedIn_3d.png"))
+//                     ],
+//                   ),
+//                 ),
+//                 SizedBox(
+//                   width: 40.0,
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ],
+//       ),

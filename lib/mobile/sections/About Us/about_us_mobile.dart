@@ -4,6 +4,7 @@ import 'package:flutter_bootstrap/flutter_bootstrap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sponsorgenix/mobile/navigation/nav_drawer.dart';
 import 'package:sponsorgenix/web/widgets/social_buttons_web.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AboutUsMobile extends StatefulWidget {
   const AboutUsMobile({Key? key}) : super(key: key);
@@ -16,7 +17,7 @@ class _AboutUsMobileState extends State<AboutUsMobile> {
   // bool condition = false;
   // double height = 0;
 
-  ScrollController controller = ScrollController();
+  ScrollController _controller = ScrollController();
   // @override
   // void initState() {
   //   super.initState();
@@ -32,6 +33,12 @@ class _AboutUsMobileState extends State<AboutUsMobile> {
   // }
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
@@ -39,390 +46,203 @@ class _AboutUsMobileState extends State<AboutUsMobile> {
       appBar: AppBar(
         centerTitle: true,
         title: Text("About Us"),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
       ),
       backgroundColor: Color.fromARGB(255, 0, 0, 0),
       body: SingleChildScrollView(
-        controller: controller,
-        //physics: NeverScrollableScrollPhysics(),
+        controller: _controller,
         child: Container(
           color: Colors.black,
-          height: size.height * 1.5,
+          height: size.height * 2.3,
           width: size.width,
-          child: Stack(fit: StackFit.expand, children: [
-            Column(
-              children: [
-                SizedBox(
-                  height: 40,
-                ),
-                Text(
-                  "Get to know us",
-                  style: GoogleFonts.poppins(
-                      fontSize: 15.0,
-                      color: Colors.white70,
-                      fontWeight: FontWeight.w400),
-                ),
-                SizedBox(
-                  height: 8.0,
-                ),
-                Text(
-                  "WHO WE ARE",
-                  style: GoogleFonts.poppins(
-                      fontSize: 46.0,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white),
-                ),
-                SizedBox(
-                  height: 40.0,
-                ),
-                BootstrapRow(
-                  height: 600,
+          child: Stack(
+            alignment: Alignment.topCenter,
+            fit: StackFit.expand,
+            children: [
+              Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    // BootstrapCol(
-                    //   sizes: 'col-md-12 col-lg-4 col-sm-12',
-                    //   child: MediaQuery.of(context).size.width < 992
-                    //       ? CircleAvatar(
-                    //           backgroundImage: NetworkImage(
-                    //               "https://images.pexels.com/photo/man-holding-ice-cream-cone-under-cloud-1262302.jpg&fm=jpg"),
-                    //           radius: MediaQuery.of(context).size.width * 0.2)
-                    //       : Container(
-                    //           height: 500,
-                    //           child: Image.asset('assets/images/ABOUTSX.png',
-                    //               height: size.height * 0.9,
-                    //               filterQuality: FilterQuality.high),
-
-                    //           //fit: BoxFit.cover,
-                    //         ),
-                    // ),
-                    // BootstrapCol(
-                    //   sizes: 'col-md-12 col-lg-4 col-sm-12',
-                    //   child: MediaQuery.of(context).size.width < 992
-                    //       ? CircleAvatar(
-                    //           radius: MediaQuery.of(context).size.width * 0.2)
-                    //       : Container(
-                    //           child: Image.asset('assets/images/ABOUTSX.png',
-                    //               height: size.height * 0.9,
-                    //               filterQuality: FilterQuality.high),
-                    //           alignment: Alignment.center,
-                    //         ),
-                    // ),
-                    BootstrapCol(
-                      sizes: 'col-md-12 col-lg-8 col-sm-12',
-                      child: Container(
-                        height: 692.0, //570.0
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            // MediaQuery.of(context).size.width > 992
-                            //     ? Container()
-                            //     : SizedBox(
-                            //         height: 35.0,
-                            //       ),
-                            Container(
-                              child: Image.asset('assets/images/ABOUTSX.png',
-                                  height: size.height * 0.9,
-                                  filterQuality: FilterQuality.high),
-                              alignment: Alignment.center,
-                            ),
-
-                            Text(
-                              "What is Sponsorgenix?",
-                              style: GoogleFonts.poppins(
-                                  fontSize: 25.0,
-                                  color: Color.fromARGB(255, 2, 255, 234),
-                                  fontWeight: FontWeight.w500),
-                            ),
-                            SizedBox(
-                              height: 6.0,
-                            ),
-                            AutoSizeText(
-                              "Sponsorgenix",
-                              maxLines: 2,
-                              style: GoogleFonts.poppins(
-                                  fontSize: 33.0,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w600),
-                            ),
-                            SizedBox(
-                              height: 15.0,
-                            ),
-                            AutoSizeText(
-                              "We are Sponsorgenix. It's a creative company. Currently helping startups, personal brands and businesses to build, grow & manage their online presence. Our Services includes: website and cross platform application building, UI/UX designing, brand assets designing, poster and billboard designing, ads designing, content creation, social media handling, digital marketing and finally managing the backend of websites.",
-                              maxLines: 5,
-                              style: GoogleFonts.poppins(
-                                  fontSize: 16.0,
-                                  color: Colors.white70,
-                                  fontWeight: FontWeight.w400),
-                            ),
-                            const SizedBox(
-                              height: 25.0,
-                            ),
-                            Container(
-                              width: double.maxFinite,
-                              height: 2.0,
-                              color: Colors.white70,
-                            ),
-
-                            Cvcard(
-                              text1: "Co-founders : ",
-                              text2: "Suprava Saha, Sagnik Sanyal",
-                            ),
-                            const Spacer(),
-                            Cvcard(
-                              text1: "Mail : ",
-                              text2: "contact@sponsorgenix.in",
-                            ),
-
-                            const SizedBox(
-                              height: 35.0,
-                            ),
-
-                            Container(
-                              height: 45,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50.0),
-                                color: Color.fromARGB(255, 2, 255, 234),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  "Connect with Us",
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 16.0,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w400),
-                                ),
-                              ),
-                            ),
-                            Row(children: [
-                              SocialButtons(
-                                  url: "https://www.instagram.com/sponsorgenix",
-                                  child: Image.asset(
-                                      "assets/images/Instagram_3d.png")),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              SocialButtons(
-                                url: "https://twitter.com/sponsorgenix",
-                                child:
-                                    Image.asset("assets/images/Twitter_3d.png"),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              SocialButtons(
-                                  url: "https://www.instagram.com/sponsorgenix",
-                                  child: Image.asset(
-                                      "assets/images/LinkedIn_3d.png")),
-                              SizedBox(
-                                width: 15.0,
-                              ),
-                            ]),
-                            Align(
-                              alignment: Alignment.centerLeft,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  const SizedBox(
-                                    height: 40,
-                                  ),
-                                  Text(
-                                    "     Services we offer ",
-                                    style: GoogleFonts.poppins(
-                                        fontSize: 15.0,
-                                        color: Colors.white70,
-                                        fontWeight: FontWeight.w400),
-                                  ),
-                                  const SizedBox(
-                                    height: 8.0,
-                                  ),
-                                  Text(
-                                    "  Our Services",
-                                    style: GoogleFonts.poppins(
-                                        fontSize: 46.0,
-                                        fontWeight: FontWeight.w700,
-                                        color: Colors.white),
-                                  ),
-                                  const SizedBox(
-                                    height: 25.0,
-                                  ),
-                                ],
-                              ),
-                            ),
-
-                            //                               // Icon(
-                            //                               //   AntDesign.github,
-                            //                               //   color: Colors.white70,
-                            //                               //   size: 18.0,
-                            //                               // ),
-                            //                               // SizedBox(
-                            //                               //   width: 15.0,
-                            //                               // ),
-                            //                               // Icon(
-                            //                               //   AntDesign.instagram,
-                            //                               //   color: Colors.white70,
-                            //                               //   size: 18.0,
-                            //                               // ),
-                            //                             ],
-                            //                           )
-                            //                         : Container(),
-                            //                   ],
-                            //                 )
-                            //               ],
-                            //             ),
-                            //           ),
-                            //         )
-                            //       ]),
-                            //       Align(
-                            //         alignment: Alignment.centerLeft,
-                            //         child: Column(
-                            //           crossAxisAlignment: CrossAxisAlignment.start,
-                            //           children: [
-                            //             SizedBox(
-                            //               height: 40,
-                            //             ),
-                            //             Text(
-                            //               "     Services we offer ",
-                            //               style: GoogleFonts.poppins(
-                            //                   fontSize: 15.0,
-                            //                   color: Colors.white70,
-                            //                   fontWeight: FontWeight.w400),
-                            //             ),
-                            //             SizedBox(
-                            //               height: 8.0,
-                            //             ),
-                            //             Text(
-                            //               "  Our Services",
-                            //               style: GoogleFonts.poppins(
-                            //                   fontSize: 46.0,
-                            //                   fontWeight: FontWeight.w700,
-                            //                   color: Colors.white),
-                            //             ),
-                            //             SizedBox(
-                            //               height: 25.0,
-                            //             ),
-                            //           ],
-                            //         ),
-                            //       ),
-                            //       BootstrapRow(height: 300, children: [
-                            //         BootstrapCol(
-                            //           sizes: 'col-sm-12 col-md-12 col-lg-6',
-                            //           child: ServiceCard(
-                            //             icon: Icons.sanitizer_rounded,
-                            //             head: "Design Trends",
-                            //             sub: "Details coming soon..",
-                            //           ),
-                            //         ),
-                            //         BootstrapCol(
-                            //           sizes: 'col-sm-12 col-md-12 col-lg-6',
-                            //           child: ServiceCard(
-                            //             icon: Icons.book_rounded,
-                            //             head: "PSD Design",
-                            //             sub: "Details coming soon..",
-                            //           ),
-                            //         ),
-                            //         BootstrapCol(
-                            //           sizes: 'Alpha',
-                            //           child: ServiceCard(
-                            //             icon: Icons.thumbs_up_down_rounded,
-                            //             head: "Customer Support",
-                            //             sub: "Details coming soon..",
-                            //           ),
-                            //         ),
-                            //         BootstrapCol(
-                            //           sizes: 'col-sm-12 col-md-12 col-lg-6',
-                            //           child: ServiceCard(
-                            //             icon: Icons.laptop_chromebook_rounded,
-                            //             head: "Web Development",
-                            //             sub: "Details coming soon..",
-                            //           ),
-                            //         ),
-                            //         BootstrapCol(
-                            //           sizes: 'col-sm-12 col-md-12 col-lg-6',
-                            //           child: ServiceCard(
-                            //             icon: Icons.facebook_rounded,
-                            //             head: "Fully Responsive",
-                            //             sub: "Details coming soon..",
-                            //           ),
-                            //         ),
-                            //         BootstrapCol(
-                            //           sizes: 'col-sm-12 col-md-12 col-lg-6',
-                            //           child: ServiceCard(
-                            //             icon: Icons.pie_chart_outline_rounded,
-                            //             head: "Branding",
-                            //             sub: "Details coming soon..",
-                            //           ),
-                            //         ),
-                            //       ]),
-                            //       Align(
-                            //         alignment: Alignment.centerLeft,
-                            //         child: Column(
-                            //           crossAxisAlignment: CrossAxisAlignment.start,
-                            //           children: [
-                            //             SizedBox(
-                            //               height: 40,
-                            //             ),
-                            //             Text(
-                            //               "     Get started with our services",
-                            //               style: GoogleFonts.poppins(
-                            //                   fontSize: 15.0,
-                            //                   color: Colors.white70,
-                            //                   fontWeight: FontWeight.w400),
-                            //             ),
-                            //             SizedBox(
-                            //               height: 8.0,
-                            //             ),
-                            //             Text(
-                            //               "  Choose a Plan",
-                            //               style: GoogleFonts.poppins(
-                            //                   fontSize: 46.0,
-                            //                   fontWeight: FontWeight.w700,
-                            //                   color: Colors.white),
-                            //             ),
-                            //             SizedBox(
-                            //               height: 25.0,
-                            //             ),
-                            //             Align(
-                            //               alignment: Alignment.center,
-                            //               child: Container(
-                            //                 width: MediaQuery.of(context).size.width < 700
-                            //                     ? MediaQuery.of(context).size.width * 0.6
-                            //                     : MediaQuery.of(context).size.width * 0.9,
-                            //                 child: BootstrapRow(
-                            //                   height: 500,
-                            //                   children: [
-                            //                     BootstrapCol(
-                            //                       sizes: 'col-sm-12 col-md-12 col-lg-4',
-                            //                       child: PlanCard(
-                            //                         icon: Icons.language,
-                            //                         btext: "Get Started",
-                            //                       ),
-                            //                     ),
-                            //                     BootstrapCol(
-                            //                       sizes: 'col-sm-12 col-md-12 col-lg-4',
-                            //                       child: PlanCard(
-                            //                         icon: Icons.person_rounded,
-                            //                         btext: "Get pro",
-                            //                       ),
-                            //                     ),
-                            // BootstrapCol(
-                            //   sizes: 'col-sm-12 col-md-12 col-lg-4',
-                            //   child: PlanCard(
-                            //     icon: Icons.sanitizer_rounded,
-                            //     btext: "Get Started",
-                            //   ),
-                            // ),
-                          ],
-                        ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Text(
+                      "Get to know us",
+                      style: GoogleFonts.poppins(
+                          fontSize: 15.0,
+                          color: Colors.white70,
+                          fontWeight: FontWeight.w400),
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      "WHO WE ARE",
+                      style: GoogleFonts.poppins(
+                          fontSize: 46.0,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white),
+                    ),
+                    SizedBox(
+                      height: 40.0,
+                    ),
+                    Container(
+                      height: size.height * 0.65,
+                      width: size.width,
+                      child: Image.asset(
+                        "assets/images/ABOUTSX.png",
+                        filterQuality: FilterQuality.high,
+                        fit: BoxFit.contain,
                       ),
-                    )
+                    ),
+                    Text(
+                      "What is Sponsorgenix?",
+                      style: GoogleFonts.poppins(
+                          fontSize: 25.0,
+                          color: Color.fromARGB(255, 2, 255, 234),
+                          fontWeight: FontWeight.w500),
+                    ),
+                    AutoSizeText(
+                      "Sponsorgenix",
+                      maxLines: 2,
+                      style: GoogleFonts.poppins(
+                          fontSize: 33.0,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    SizedBox(
+                      height: 15.0,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: AutoSizeText(
+                        "We are Sponsorgenix. It's a creative company. Currently helping startups, personal brands and businesses to build, grow & manage their online presence. Our Services includes: website and cross platform application building, UI/UX designing, brand assets designing, poster and billboard designing, ads designing, content creation, social media handling, digital marketing and finally managing the backend of websites.",
+                        maxLines: 7,
+                        overflow: TextOverflow.ellipsis,
+                        textAlign: TextAlign.left,
+                        style: GoogleFonts.poppins(
+                            fontSize: 16.0,
+                            color: Colors.white70,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20.0,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8),
+                      child: Container(
+                        width: size.width,
+                        height: 1.0,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 8),
+                      child: CvCard(
+                        text1: "Co-founders : ",
+                        text2: "Suprava Saha, Sagnik Sanyal",
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 8),
+                      child: CvCard(
+                        text1: "Mail : ",
+                        text2: "contact@sponsorgenix.in",
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: size.width * 0.02,
+                        ),
+                        Text(
+                          "Connect with us on :",
+                          style: GoogleFonts.poppins(
+                              fontSize: 16.0,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w400),
+                        ),
+                        SizedBox(
+                          width: size.width * 0.05,
+                        ),
+                        _socialbuttons(
+                            url: "https://www.instagram.com/sponsorgenix",
+                            child:
+                                Image.asset("assets/images/Instagram_3d.png")),
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        _socialbuttons(
+                          url: "https://twitter.com/sponsorgenix",
+                          child: Image.asset("assets/images/Twitter_3d.png"),
+                        ),
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        _socialbuttons(
+                            url:
+                                "https://www.linkedin.com/company/sponsorgenix/",
+                            child: Image.asset("assets/images/LinkedIn_3d.png"))
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 70,
+                    ),
+                    Text(
+                      "     Services we offer ",
+                      style: GoogleFonts.poppins(
+                          fontSize: 15.0,
+                          color: Colors.white70,
+                          fontWeight: FontWeight.w400),
+                    ),
+                    const SizedBox(
+                      height: 5.0,
+                    ),
+                    Text(
+                      "  Our Services",
+                      style: GoogleFonts.poppins(
+                          fontSize: 46.0,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white),
+                    ),
+                    const SizedBox(
+                      height: 20.0,
+                    ),
+                    const Text("Coming Soon...")
                   ],
                 ),
-                //  )
-              ],
-            ),
-          ]),
+              ),
+            ],
+          ),
         ),
       ),
+    );
+  }
+
+  Widget _socialbuttons({required String url, required Image child}) {
+    return IconButton(
+      padding: EdgeInsets.all(0),
+      onPressed: () async {
+        if (await canLaunch(url)) {
+          await launch(url);
+        } else {
+          ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text("Something went wrong, try again later")));
+        }
+      },
+      icon: child,
+      iconSize: 25,
     );
   }
 }
@@ -629,22 +449,19 @@ class _ServiceCardState extends State<ServiceCard> {
   }
 }
 
-class Cvcard extends StatefulWidget {
+class CvCard extends StatelessWidget {
   final String text1;
   final String text2;
-  Cvcard({required this.text2, required this.text1});
-  @override
-  _CvcardState createState() => _CvcardState();
-}
+  const CvCard({Key? key, required this.text1, required this.text2})
+      : super(key: key);
 
-class _CvcardState extends State<Cvcard> {
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Row(
         children: [
           Text(
-            widget.text1,
+            text1,
             maxLines: 1,
             style: GoogleFonts.poppins(
                 fontSize: 16.0,
@@ -652,7 +469,7 @@ class _CvcardState extends State<Cvcard> {
                 fontWeight: FontWeight.w400),
           ),
           Text(
-            widget.text2,
+            text2,
             maxLines: 1,
             style: GoogleFonts.poppins(
                 fontSize: 16.0,

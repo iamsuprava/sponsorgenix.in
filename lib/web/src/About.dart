@@ -200,12 +200,13 @@ class _AboutState extends State<About> {
                                                 children: [
                                                   Cvcard(
                                                     text1: "Name : ",
-                                                    text2: "Emma Smith",
+                                                    text2: "Sponsorgenix",
                                                   ),
                                                   Spacer(),
                                                   Cvcard(
                                                     text1: "Mail : ",
-                                                    text2: "example@gmail.com",
+                                                    text2:
+                                                        "contact@sponsorgenix.in",
                                                   ),
                                                 ],
                                               )),
@@ -224,8 +225,8 @@ class _AboutState extends State<About> {
                                       : Column(
                                           children: [
                                             Cvcard(
-                                              text1: "Age : ",
-                                              text2: "21",
+                                              text1: "Ph no: : ",
+                                              text2: "+91 8392068384",
                                             ),
                                             Spacer(),
                                             Cvcard(
@@ -289,7 +290,7 @@ class _AboutState extends State<About> {
                                               ),
                                               SocialButtons(
                                                   url:
-                                                      "https://www.instagram.com/sponsorgenix",
+                                                      "https://www.linkedin.com/company/sponsorgenix/",
                                                   child: Image.asset(
                                                       "assets/images/LinkedIn_3d.png")),
                                               SizedBox(

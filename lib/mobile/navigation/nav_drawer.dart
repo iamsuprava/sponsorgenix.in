@@ -93,7 +93,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                         ),
                         _socialbuttons(
                           context,
-                          url: "https://www.instagram.com/sponsorgenix",
+                          url: "https://www.linkedin.com/company/sponsorgenix/",
                           child: Image.asset(
                             "assets/images/LinkedIn_3d.png",
                           ),

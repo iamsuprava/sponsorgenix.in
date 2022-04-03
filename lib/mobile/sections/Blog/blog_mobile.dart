@@ -1,46 +1,44 @@
-// import 'package:flutter/material.dart';
-// import 'package:sponsorgenix/mobile/navigation/nav_drawer.dart';
-
-// class BlogMobile extends StatelessWidget {
-//   const BlogMobile({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       drawer: NavigationDrawer(),
-//       appBar: AppBar(title: Text("Blog"),),
-//     );
-//   }
-// }
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bootstrap/flutter_bootstrap.dart';
-
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sponsorgenix/mobile/navigation/nav_drawer.dart';
+// import 'package:smooth_scroll_web/smooth_scroll_web.dart';
 
 class BlogMobile extends StatefulWidget {
-  const BlogMobile({Key? key}) : super(key: key);
-
   @override
-  State<BlogMobile> createState() => _AboutUsMobileState();
+  _BlogState createState() => _BlogState();
 }
 
-class _AboutUsMobileState extends State<BlogMobile> {
+class _BlogState extends State<BlogMobile> {
   bool condition = false;
   double height = 0;
   ScrollController controller = ScrollController();
 
   @override
+  void initState() {
+    super.initState();
+    setState(() {
+      condition = false;
+      height = 1500;
+      Future.delayed(Duration(milliseconds: 400), () {
+        setState(() {
+          height = 0;
+        });
+      });
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       drawer: NavigationDrawer(),
       appBar: AppBar(
         centerTitle: true,
         title: Text("Blog"),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
       ),
-      backgroundColor: Color.fromARGB(255, 0, 0, 0),
+      backgroundColor: Color(0xff101010),
       body: Container(
         child: Stack(
           children: [
@@ -110,7 +108,8 @@ class _AboutUsMobileState extends State<BlogMobile> {
                               child: Container(
                                 width: 370.0,
                                 child: BlogCard(
-                                    image: "",
+                                    image:
+                                        "https://miro.medium.com/max/2400/0*qO2PFu6dr04R1O6P.png",
                                     head: "Take a tourof my office",
                                     sub: "Coming Soon"),
                               ),
@@ -121,7 +120,8 @@ class _AboutUsMobileState extends State<BlogMobile> {
                               child: Container(
                                 width: 370.0,
                                 child: BlogCard(
-                                    image: "",
+                                    image:
+                                        "https://miro.medium.com/max/2400/0*qO2PFu6dr04R1O6P.png",
                                     head: "Take a tourof my office",
                                     sub: "Coming Soon.."),
                               ),
@@ -132,132 +132,144 @@ class _AboutUsMobileState extends State<BlogMobile> {
                               child: Container(
                                 width: 370.0,
                                 child: BlogCard(
-                                    image: "",
+                                    image:
+                                        "https://miro.medium.com/max/2400/0*qO2PFu6dr04R1O6P.png",
                                     head: "Take a tourof my office",
                                     sub: "Coming Soon.."),
                               ),
                             ),
-                            BootstrapCol(
-                              fit: FlexFit.tight,
-                              sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
-                              child: Container(
-                                width: 370.0,
-                                child: BlogCard(
-                                    image: "",
-                                    head: "Take a tourof my office",
-                                    sub: "Coming Soon..."),
-                              ),
-                            ),
-                            BootstrapCol(
-                              fit: FlexFit.tight,
-                              sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
-                              child: Container(
-                                width: 370.0,
-                                child: BlogCard(
-                                    image: "",
-                                    head: "Take a tourof my office",
-                                    sub: "Coming Soon..."),
-                              ),
-                            ),
-                            BootstrapCol(
-                              fit: FlexFit.tight,
-                              sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
-                              child: Container(
-                                width: 370.0,
-                                child: BlogCard(
-                                    image: "",
-                                    head: "Take a tourof my office",
-                                    sub: "Coming Soon.."),
-                              ),
-                            ),
-                            BootstrapCol(
-                              fit: FlexFit.tight,
-                              sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
-                              child: Container(
-                                width: 370.0,
-                                child: BlogCard(
-                                    image: "",
-                                    head: "Take a tourof my office",
-                                    sub: "Coming Soon.."),
-                              ),
-                            ),
-                            BootstrapCol(
-                              fit: FlexFit.tight,
-                              sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
-                              child: Container(
-                                width: 370.0,
-                                child: BlogCard(
-                                    image: "",
-                                    head: "Take a tourof my office",
-                                    sub: "Coming Soon.."),
-                              ),
-                            ),
-                            BootstrapCol(
-                              fit: FlexFit.tight,
-                              sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
-                              child: Container(
-                                width: 370.0,
-                                child: BlogCard(
-                                    image: "",
-                                    head: "Take a tourof my office",
-                                    sub: "Coming Soon.."),
-                              ),
-                            ),
-                            BootstrapCol(
-                              fit: FlexFit.tight,
-                              sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
-                              child: Container(
-                                width: 370.0,
-                                child: BlogCard(
-                                    image: "",
-                                    head: "Take a tourof my office",
-                                    sub: "Coming Soon.."),
-                              ),
-                            ),
-                            BootstrapCol(
-                              fit: FlexFit.tight,
-                              sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
-                              child: Container(
-                                width: 370.0,
-                                child: BlogCard(
-                                    image: "",
-                                    head: "Take a tourof my office",
-                                    sub: "Coming Soon.."),
-                              ),
-                            ),
-                            BootstrapCol(
-                              fit: FlexFit.tight,
-                              sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
-                              child: Container(
-                                width: 370.0,
-                                child: BlogCard(
-                                    image: "",
-                                    head: "Take a tourof my office",
-                                    sub: "Coming Soon.."),
-                              ),
-                            ),
-                            BootstrapCol(
-                              fit: FlexFit.tight,
-                              sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
-                              child: Container(
-                                width: 370.0,
-                                child: BlogCard(
-                                    image: "",
-                                    head: "Take a tourof my office",
-                                    sub: "Coming Soon.."),
-                              ),
-                            ),
-                            BootstrapCol(
-                              fit: FlexFit.tight,
-                              sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
-                              child: Container(
-                                width: 370.0,
-                                child: BlogCard(
-                                    image: "",
-                                    head: "Take a tourof my office",
-                                    sub: "Coming Soon.."),
-                              ),
-                            ),
+                            // BootstrapCol(
+                            //   fit: FlexFit.tight,
+                            //   sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
+                            //   child: Container(
+                            //     width: 370.0,
+                            //     child: BlogCard(
+                            //         image:
+                            //             "https://miro.medium.com/max/2400/0*qO2PFu6dr04R1O6P.png",
+                            //         head: "Take a tourof my office",
+                            //         sub: "Coming Soon..."),
+                            //   ),
+                            // ),
+                            // BootstrapCol(
+                            //   fit: FlexFit.tight,
+                            //   sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
+                            //   child: Container(
+                            //     width: 370.0,
+                            //     child: BlogCard(
+                            //         image:
+                            //             "https://miro.medium.com/max/2400/0*qO2PFu6dr04R1O6P.pnghttps://miro.medium.com/max/2400/0*qO2PFu6dr04R1O6P.png",
+                            //         head: "Take a tourof my office",
+                            //         sub: "Coming Soon..."),
+                            //   ),
+                            // ),
+                            // BootstrapCol(
+                            //   fit: FlexFit.tight,
+                            //   sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
+                            //   child: Container(
+                            //     width: 370.0,
+                            //     child: BlogCard(
+                            //         image:
+                            //             "https://miro.medium.com/max/2400/0*qO2PFu6dr04R1O6P.pnghttps://miro.medium.com/max/2400/0*qO2PFu6dr04R1O6P.png",
+                            //         head: "Take a tourof my office",
+                            //         sub: "Coming Soon.."),
+                            //   ),
+                            // ),
+                            // BootstrapCol(
+                            //   fit: FlexFit.tight,
+                            //   sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
+                            //   child: Container(
+                            //     width: 370.0,
+                            //     child: BlogCard(
+                            //         image:
+                            //             "https://miro.medium.com/max/2400/0*qO2PFu6dr04R1O6P.png",
+                            //         head: "Take a tourof my office",
+                            //         sub: "Coming Soon.."),
+                            //   ),
+                            // ),
+                            // BootstrapCol(
+                            //   fit: FlexFit.tight,
+                            //   sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
+                            //   child: Container(
+                            //     width: 370.0,
+                            //     child: BlogCard(
+                            //         image:
+                            //             "https://miro.medium.com/max/2400/0*qO2PFu6dr04R1O6P.png",
+                            //         head: "Take a tourof my office",
+                            //         sub: "Coming Soon.."),
+                            //   ),
+                            // ),
+                            // BootstrapCol(
+                            //   fit: FlexFit.tight,
+                            //   sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
+                            //   child: Container(
+                            //     width: 370.0,
+                            //     child: BlogCard(
+                            //         image:
+                            //             "https://miro.medium.com/max/2400/0*qO2PFu6dr04R1O6P.png",
+                            //         head: "Take a tourof my office",
+                            //         sub: "Coming Soon.."),
+                            //   ),
+                            // ),
+                            // BootstrapCol(
+                            //   fit: FlexFit.tight,
+                            //   sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
+                            //   child: Container(
+                            //     width: 370.0,
+                            //     child: BlogCard(
+                            //         image:
+                            //             "https://miro.medium.com/max/2400/0*qO2PFu6dr04R1O6P.png",
+                            //         head: "Take a tourof my office",
+                            //         sub: "Coming Soon.."),
+                            //   ),
+                            // ),
+                            // BootstrapCol(
+                            //   fit: FlexFit.tight,
+                            //   sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
+                            //   child: Container(
+                            //     width: 370.0,
+                            //     child: BlogCard(
+                            //         image:
+                            //             "https://miro.medium.com/max/2400/0*qO2PFu6dr04R1O6P.png",
+                            //         head: "Take a tourof my office",
+                            //         sub: "Coming Soon.."),
+                            //   ),
+                            // ),
+                            // BootstrapCol(
+                            //   fit: FlexFit.tight,
+                            //   sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
+                            //   child: Container(
+                            //     width: 370.0,
+                            //     child: BlogCard(
+                            //         image:
+                            //             "https://miro.medium.com/max/2400/0*qO2PFu6dr04R1O6P.png",
+                            //         head: "Take a tourof my office",
+                            //         sub: "Coming Soon.."),
+                            //   ),
+                            // ),
+                            // BootstrapCol(
+                            //   fit: FlexFit.tight,
+                            //   sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
+                            //   child: Container(
+                            //     width: 370.0,
+                            //     child: BlogCard(
+                            //         image:
+                            //             "https://miro.medium.com/max/2400/0*qO2PFu6dr04R1O6P.png",
+                            //         head: "Take a tourof my office",
+                            //         sub: "Coming Soon.."),
+                            //   ),
+                            // ),
+                            // BootstrapCol(
+                            //   fit: FlexFit.tight,
+                            //   sizes: 'col-md-6 col-lg-4 col-sm-12 col-xs-12',
+                            //   child: Container(
+                            //     width: 370.0,
+                            //     child: BlogCard(
+                            //         image:
+                            //             "https://miro.medium.com/max/2400/0*qO2PFu6dr04R1O6P.png",
+                            //         head: "Take a tourof my office",
+                            //         sub: "Coming Soon.."),
+                            //   ),
+                            // ),
                           ],
                         ),
                       ),

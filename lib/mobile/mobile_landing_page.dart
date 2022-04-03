@@ -70,7 +70,7 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
               ),
               MobileFooter2(pixels: pixels),
               MobileFooter3(pixels: pixels),
-              MobileFooter4(pixels: pixels),
+              // MobileFooter4(pixels: pixels),
               Footer(),
             ],
           ),
