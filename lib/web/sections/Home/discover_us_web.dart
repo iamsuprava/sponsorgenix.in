@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sponsorgenix/web/widgets/animated_lottie_explore_button.dart';
 import 'package:sponsorgenix/web/widgets/floating_cubes.dart';
-
 import '../../src/About.dart';
 
 class HomeDiscoverUsWeb extends StatelessWidget {
@@ -53,7 +52,7 @@ class HomeDiscoverUsWeb extends StatelessWidget {
           ),
           AnimatedPositioned(
             duration: const Duration(milliseconds: 900),
-            right: pixels >= size.height * 0.59 ? size.width * 0.05 : -600,
+            right: pixels >= size.height * 0.59 ? size.width * 0.03 : -600,
             bottom: size.height * 0.3,
             child: AnimatedOpacity(
               duration: const Duration(milliseconds: 900),
@@ -69,18 +68,21 @@ class HomeDiscoverUsWeb extends StatelessWidget {
                       fontWeight: FontWeight.w700, //w700
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20.0,
                   ),
-                  Text(
-                      "Welcome to Sponsorgenix.\nComplete branding solutions & design\n services company across India.\nIt’s a creative company currently helping startups,\npersonal brands and businesses to build grow & \nmanage their online  presence.",
-                      textAlign: TextAlign.left,
-                      overflow: TextOverflow.ellipsis,
-                      //style: TextStyle(fontWeight: FontWeight.bold),
-                      style: GoogleFonts.nunito(
-                        fontSize: 25.0,
-                        fontWeight: FontWeight.w400, //w700
-                      )),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Text(
+                        "Welcome to Sponsorgenix.\nComplete branding solutions & design\n services company across India.\nIt’s a creative company currently helping startups,\npersonal brands and businesses to build grow & \nmanage their online  presence.",
+                        textAlign: TextAlign.left,
+                        overflow: TextOverflow.ellipsis,
+                        //style: TextStyle(fontWeight: FontWeight.bold),
+                        style: GoogleFonts.nunito(
+                          fontSize: 25.0,
+                          fontWeight: FontWeight.w400, //w700
+                        )),
+                  ),
                   SizedBox(
                     height: 30.0,
                   ),

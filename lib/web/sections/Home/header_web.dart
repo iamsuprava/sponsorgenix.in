@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
-
 import 'package:sponsorgenix/constants.dart';
 import 'package:sponsorgenix/web/widgets/social_buttons_web.dart';
+import 'package:video_player/video_player.dart';
 
 class HeaderSectionWeb extends StatefulWidget {
   final double pixels;
@@ -30,39 +30,54 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb> {
   double height = 1500;
   int i = 0;
   late bool condition;
-
+  VideoPlayerController? _videoPlayerController;
   @override
   void initState() {
     width = 0;
     condition = true;
-    super.initState();
     Future.delayed(Duration(milliseconds: 400), () {
       setState(() {
         width = 180;
         height = 0;
       });
     });
+    _videoPlayerController =
+        VideoPlayerController.asset("assets/images/Untitled.webm")
+          ..setLooping(true)
+          ..initialize().then((_) {
+            setState(() {});
+          });
+    WidgetsBinding.instance!.addPostFrameCallback((_) {
+      // mutes the video
+      _videoPlayerController!.setVolume(0);
+      // Plays the video once the widget is build and loaded.
+      _videoPlayerController!.play();
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _videoPlayerController!.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.height,
-      width: size.width,
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage("assets/images/SX.gif"),
-            // image: NetworkImage(
-            //     "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fview&psig=AOvVaw0vcqLUwaGPlD-y6xfGjCWY&ust=1648927810487000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNDCrvbM8_YCFQAAAAAdAAAAABAD"),
-            // image: NetworkImage(
-            //     'https://docs.flutter.dev/assets/images/dash/dash-fainting.gif'),
-            filterQuality: FilterQuality.high,
-            fit: BoxFit.cover),
-      ),
       child: Stack(
-        alignment: Alignment.topCenter,
         children: [
+          Center(
+              child: _videoPlayerController!.value.isInitialized
+                  ? AspectRatio(
+                      aspectRatio: _videoPlayerController!.value.aspectRatio,
+                      child: VideoPlayer(_videoPlayerController!),
+                    )
+                  : Container(
+                      height: size.height,
+                      width: size.width,
+                    )),
           Padding(
             padding: EdgeInsets.fromLTRB(
                 size.width * 0.2, size.height * 0.2, size.width * 0.2, 0),
@@ -149,34 +164,6 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb> {
               ),
             ),
           ),
-          // Padding(
-          //   padding: EdgeInsets.fromLTRB(size.width * 0.03, size.height * 0.5,
-          //       size.width * 0.4, size.height * 0.2),
-          //   child: RotatedBox(
-          //     quarterTurns: 1,
-          //     child: Row(
-          //       children: [
-          //         Text(
-          //           "sponsorgenix@gmail.com",
-          //           style: GoogleFonts.poppins(
-          //               fontSize: 16.0,
-          //               fontWeight: FontWeight.w400,
-          //               color: Colors.white),
-          //         ),
-          //         SizedBox(
-          //           height: size.height * 0.05,
-          //         ),
-          //         Text(
-          //           " | 2022",
-          //           style: GoogleFonts.poppins(
-          //               fontSize: 16.0,
-          //               fontWeight: FontWeight.w400,
-          //               color: Colors.white),
-          //         ),
-          //       ],
-          //     ),
-          //   ),
-          // ),
           Positioned(
             left: size.width / 2,
             bottom: 0,
