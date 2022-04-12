@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:lottie/lottie.dart';
 import 'package:sponsorgenix/mobile/sections/Home/mobile_contact_us.dart';
 import 'package:sponsorgenix/mobile/sections/Home/mobile_discover_us.dart';
 import 'package:sponsorgenix/mobile/sections/Home/mobile_footer.dart';
 import 'package:sponsorgenix/mobile/sections/Home/mobile_footer2.dart';
 import 'package:sponsorgenix/mobile/sections/Home/mobile_footer3.dart';
 import 'package:sponsorgenix/mobile/sections/Home/mobile_footer4.dart';
-
 import 'package:sponsorgenix/mobile/sections/Home/mobile_home_header.dart';
 import 'package:sponsorgenix/mobile/sections/Home/mobile_services.dart';
 import 'package:sponsorgenix/web/sections/Footer.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import 'navigation/nav_drawer.dart';
 
 class MobileLandingPage extends StatefulWidget {
@@ -56,26 +55,33 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
         elevation: 0,
       ),
       extendBodyBehindAppBar: true,
-      body: Stack(children: [
-        SingleChildScrollView(
-          controller: _scrollController,
-          child: Column(
-            children: [
-              MobileHomeHeader(),
-              MobileDiscoverUs(),
-              MobileServices(),
-              // MobileContactUs(),
-              FooterMobile(
-                pixels: pixels,
+      body: SingleChildScrollView(
+        controller: _scrollController,
+        child: Column(
+          children: [
+            MobileHomeHeader(
+              pixels: pixels,
+              goDown: IconButton(
+                icon: LottieBuilder.network(
+                  "https://assets3.lottiefiles.com/packages/lf20_kxjicwsk.json",
+                  fit: BoxFit.contain,
+                ),
+                onPressed: () {},
               ),
-              MobileFooter2(pixels: pixels),
-              MobileFooter3(pixels: pixels),
-              // MobileFooter4(pixels: pixels),
-              Footer(),
-            ],
-          ),
+            ),
+            MobileDiscoverUs(),
+            MobileServices(),
+            // MobileContactUs(),
+            FooterMobile(
+              pixels: pixels,
+            ),
+            MobileFooter2(pixels: pixels),
+            MobileFooter3(pixels: pixels),
+            // MobileFooter4(pixels: pixels),
+            Footer(),
+          ],
         ),
-      ]),
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.miniStartFloat,
       floatingActionButton: FloatingActionButton(
         child: Container(

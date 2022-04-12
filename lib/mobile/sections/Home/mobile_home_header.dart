@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:video_player/video_player.dart';
 
 class MobileHomeHeader extends StatefulWidget {
-  const MobileHomeHeader({Key? key}) : super(key: key);
+  final Widget goDown;
+  final double pixels;
+  const MobileHomeHeader({Key? key, required this.goDown, required this.pixels})
+      : super(key: key);
 
   @override
   State<MobileHomeHeader> createState() => _MobileHomeHeaderState();
@@ -17,6 +21,7 @@ List text = [
 ];
 
 class _MobileHomeHeaderState extends State<MobileHomeHeader> {
+  VideoPlayerController? _videoPlayerController;
   String name = text[0];
   double width = 130;
   double height = 1500;
@@ -26,29 +31,58 @@ class _MobileHomeHeaderState extends State<MobileHomeHeader> {
   void initState() {
     width = 0;
     condition = true;
-    super.initState();
     Future.delayed(Duration(milliseconds: 400), () {
       setState(() {
         width = 130;
         height = 0;
       });
     });
+    //VideoPlayerWidget
+    _videoPlayerController =
+        VideoPlayerController.asset("assets/images/Untitled.webm")
+          ..setLooping(true)
+          ..initialize().then((_) {
+            setState(() {});
+          });
+    WidgetsBinding.instance!.addPostFrameCallback((_) {
+      // mutes the video
+      _videoPlayerController!.setVolume(0);
+      // Plays the video once the widget is build and loaded.
+      _videoPlayerController!.play();
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _videoPlayerController!.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.height, //* 0.75
+      height: size.height,
       width: size.width,
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage("assets/images/SX.gif"),
-            filterQuality: FilterQuality.high,
-            fit: BoxFit.cover),
-      ),
       child: Stack(
         children: [
+          SizedBox.expand(
+            child: FittedBox(
+              fit: BoxFit.cover,
+              child: SizedBox(
+                width: _videoPlayerController!.value.size.width,
+                height: _videoPlayerController!.value.size.height,
+                child: _videoPlayerController!.value.isInitialized
+                    ? VideoPlayer(_videoPlayerController!)
+                    : Container(
+                        height: size.height,
+                        width: size.width,
+                        color: Colors.black,
+                      ),
+              ),
+            ),
+          ),
           Positioned(
             left: size.width * 0.25,
             top: size.height * 0.2,
@@ -110,6 +144,13 @@ class _MobileHomeHeaderState extends State<MobileHomeHeader> {
                 ],
               ),
             ),
+          ),
+          Positioned(
+            left: size.width / 2,
+            bottom: 0,
+            child: Visibility(
+                visible: widget.pixels >= size.height * 0.9 ? false : true,
+                child: widget.goDown),
           ),
         ],
       ),
