@@ -1,5 +1,4 @@
 import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -96,7 +95,7 @@ class _HomeFooter2State extends State<MobileFooter3> {
                                   style: GoogleFonts.nunito(
                                     fontWeight: FontWeight.w400,
                                     color: Colors.white,
-                                    fontSize: 16.0,
+                                    fontSize: 14.0,
                                   ),
                                 ),
                               ],

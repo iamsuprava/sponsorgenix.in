@@ -65,14 +65,15 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                       height: size.height * 0.02,
                     ),
                     Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: size.width * 0.005),
-                      child: Divider(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Container(
+                        height: 1,
                         color: Colors.white,
+                        width: double.maxFinite,
                       ),
                     ),
                     SizedBox(
-                      height: size.height * 0.02,
+                      height: size.height * 0.025,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,

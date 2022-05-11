@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sponsorgenix/web/widgets/animated_lottie_explore_button.dart';
 import 'package:sponsorgenix/web/widgets/floating_cubes.dart';
-import '../../src/About.dart';
+
 
 class HomeDiscoverUsWeb extends StatelessWidget {
   final double pixels;

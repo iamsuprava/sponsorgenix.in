@@ -145,12 +145,15 @@ class _MobileHomeHeaderState extends State<MobileHomeHeader> {
               ),
             ),
           ),
-          Positioned(
-            left: size.width / 2,
-            bottom: 0,
-            child: Visibility(
-                visible: widget.pixels >= size.height * 0.9 ? false : true,
-                child: widget.goDown),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: SizedBox(
+              height: 35,
+              width: 40,
+              child: Visibility(
+                  visible: widget.pixels >= 150 ? false : true,
+                  child: widget.goDown),
+            ),
           ),
         ],
       ),

@@ -2,8 +2,10 @@ import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sponsorgenix/constants.dart';
-import 'package:sponsorgenix/web/src/About.dart';
+
 import 'package:sponsorgenix/web/widgets/hire_us_button.dart';
+
+import '../About Us/about_us_web.dart';
 
 class HomeServicesWeb extends StatelessWidget {
   final double pixels;

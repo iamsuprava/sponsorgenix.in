@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:sponsorgenix/web/src/Contact.dart';
+import 'package:sponsorgenix/web/sections/Contact%20Us/Contact.dart';
 
 import '../../constants.dart';
 

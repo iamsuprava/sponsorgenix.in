@@ -3,7 +3,8 @@ import 'package:lottie/lottie.dart';
 import 'package:sponsorgenix/constants.dart';
 import 'package:sponsorgenix/web/sections/Home/header_web.dart';
 
-import '../src/About.dart';
+import '../sections/About Us/about_us_web.dart';
+
 
 class AnimatedLottieButton extends StatefulWidget {
   const AnimatedLottieButton({

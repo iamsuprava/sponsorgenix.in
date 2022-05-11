@@ -1,8 +1,10 @@
+import 'dart:js';
+
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import 'package:sponsorgenix/web/src/About.dart';
-import 'package:sponsorgenix/web/src/Blog.dart';
-import 'package:sponsorgenix/web/src/Contact.dart';
+import 'package:sponsorgenix/web/sections/About%20Us/about_us_web.dart';
+import 'package:sponsorgenix/web/sections/Blogs/Blog.dart';
+import 'package:sponsorgenix/web/sections/Contact%20Us/Contact.dart';
 import 'package:sponsorgenix/web/web_landing_page.dart';
 
 class Flurorouter {

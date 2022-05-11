@@ -69,15 +69,16 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb> {
       child: Stack(
         children: [
           Center(
-              child: _videoPlayerController!.value.isInitialized
-                  ? AspectRatio(
-                      aspectRatio: _videoPlayerController!.value.aspectRatio,
-                      child: VideoPlayer(_videoPlayerController!),
-                    )
-                  : Container(
-                      height: size.height,
-                      width: size.width,
-                    )),
+            child: _videoPlayerController!.value.isInitialized
+                ? AspectRatio(
+                    aspectRatio: _videoPlayerController!.value.aspectRatio,
+                    child: VideoPlayer(_videoPlayerController!),
+                  )
+                : Container(
+                    height: size.height * 0.9,
+                    width: size.width,
+                  ),
+          ),
           Padding(
             padding: EdgeInsets.fromLTRB(
                 size.width * 0.2, size.height * 0.2, size.width * 0.2, 0),
@@ -166,9 +167,9 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb> {
           ),
           Positioned(
             left: size.width / 2,
-            bottom: 0,
+            bottom: size.height * 0.19,
             child: Visibility(
-                visible: widget.pixels >= size.height * 0.65 ? false : true,
+                visible: widget.pixels >= size.height * 0.3 ? false : true,
                 child: widget.down_key),
           ),
         ],
@@ -176,106 +177,3 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb> {
     );
   }
 }
-
-// Column(
-//         mainAxisAlignment: MainAxisAlignment.center,
-//         crossAxisAlignment: CrossAxisAlignment.center,
-//         children: [
-//           SizedBox(
-//             height: size.height * 0.12,
-//           ),
-//           Image.asset(
-//             "assets/images/Logo.png",
-//             filterQuality: FilterQuality.high,
-//             height: size.height * 0.4,
-//             width: size.width * 0.6,
-//           ),
-//           SizedBox(
-//             height: 30,
-//           ),
-//           Column(
-//             crossAxisAlignment: CrossAxisAlignment.center,
-//             children: [
-//               Container(
-//                 child: Row(
-//                   mainAxisAlignment: MainAxisAlignment.center,
-//                   children: [
-//                     Text(
-//                       "Helping ",
-//                       style: GoogleFonts.poppins(
-//                           fontSize: 31.0,
-//                           fontWeight: FontWeight.w500,
-//                           color: Colors.white),
-//                     ),
-//                     AnimatedContainer(
-//                       duration: Duration(milliseconds: 1000),
-//                       curve: Curves.easeInOut,
-//                       width: width,
-//                       onEnd: () {
-//                         if (i == 3) i = 0;
-//                         if (width == 0) {
-//                           name = text[i++];
-//                         }
-//                         Future.delayed(Duration(milliseconds: 200), () {
-//                           setState(() {
-//                             width == 180 ? width = 0 : width = 180;
-//                           });
-//                         });
-//                       },
-//                       child: Text(
-//                         name,
-//                         softWrap: false,
-//                         style: GoogleFonts.poppins(
-//                             fontSize: 31.0,
-//                             fontWeight: FontWeight.w500,
-//                             color: Colors.white),
-//                       ),
-//                     ),
-//                     Container(
-//                       height: 29.0,
-//                       width: 2.0,
-//                       color: Colors.white,
-//                     )
-//                   ],
-//                 ),
-//               )
-//             ],
-//           ),
-//           Padding(
-//             padding: EdgeInsets.only(bottom: 25.0),
-//             child: Row(
-//               crossAxisAlignment: CrossAxisAlignment.end,
-//               children: [
-//                 Padding(
-//                   padding: EdgeInsets.only(left: 25.0),
-                  // child: 
-//                 ),
-//                 Spacer(),
-//                 Padding(
-//                   padding: const EdgeInsets.only(right: 25.0),
-//                   child: Column(
-//                     children: [
-//                       SocialButtons(
-//                         child: Image.asset("assets/images/Instagram_3d.png"),
-//                       ),
-//                       SizedBox(
-//                         height: 10,
-//                       ),
-//                       SocialButtons(
-//                           child: Image.asset("assets/images/Twitter_3d.png")),
-//                       SizedBox(
-//                         height: 10,
-//                       ),
-//                       SocialButtons(
-//                           child: Image.asset("assets/images/LinkedIn_3d.png"))
-//                     ],
-//                   ),
-//                 ),
-//                 SizedBox(
-//                   width: 40.0,
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ],
-//       ),
